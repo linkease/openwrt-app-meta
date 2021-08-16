@@ -10,6 +10,7 @@ META_DESCRIPTION:=DDNS.TO内网穿透
 META_AUTHOR:=xiaobao
 META_TAGS:=net tools
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/ddnsto
+META_WEBSITE:=https://www.ddnsto.com/
 
 include ../../meta.mk
 

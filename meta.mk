@@ -51,6 +51,7 @@ define Package/$(PKG_NAME)/install
 	fi;
 	echo "{\"name\":\"$(META_BASENAME)\",\"title\":\"$(META_ESCAPED_TITLE)\",\
 		\"entry\":\"$(META_LUCI_ENTRY)\",\"author\":\"$(META_AUTHOR)\",\
+		\"website\":\"$(META_WEBSITE)\",\
 		\"description\":\"$(META_ESCAPED_DESCRIPTION)\",\"tags\":\
 		[$(patsubst %$(comma),%,$(subst $(space),,$(foreach tag,$(META_TAGS),\"$(tag)\"$(comma))))]}" \
 		> $(1)/usr/lib/opkg/meta/$(META_BASENAME).json
