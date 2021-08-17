@@ -45,9 +45,9 @@ define Build/Compile
 endef
 
 define Package/$(PKG_NAME)/install
-	$(INSTALL_DIR) $(1)/usr/lib/opkg/meta
+	$(INSTALL_DIR) $(1)/usr/lib/opkg/meta $(1)/www/luci-static/resources/app-icons
 	if [ -f ./logo.png ]; then \
-		$(INSTALL_DATA) ./logo.png $(1)/usr/lib/opkg/meta/$(META_BASENAME).png ; \
+		$(INSTALL_DATA) ./logo.png $(1)/www/luci-static/resources/app-icons/$(META_BASENAME).png ; \
 	fi;
 	echo "{\"name\":\"$(META_BASENAME)\",\"title\":\"$(META_ESCAPED_TITLE)\",\
 		\"entry\":\"$(META_LUCI_ENTRY)\",\"author\":\"$(META_AUTHOR)\",\
