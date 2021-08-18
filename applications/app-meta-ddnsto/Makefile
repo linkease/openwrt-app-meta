@@ -8,7 +8,7 @@ META_TITLE:=DDNS.TO
 META_DEPENDS:=+luci-app-ddnsto +luci-i18n-ddnsto-zh-cn
 META_DESCRIPTION:=DDNS.TO内网穿透
 META_AUTHOR:=xiaobao
-META_TAGS:=net tools
+META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/ddnsto
 META_WEBSITE:=https://www.ddnsto.com/
 
