@@ -5,7 +5,7 @@ include $(TOPDIR)/rules.mk
 PKG_VERSION=1.0.0
 PKG_RELEASE=1
 META_TITLE:=DDNS.TO
-META_DEPENDS:=+luci-app-ddnsto +luci-i18n-ddnsto-zh-cn
+META_DEPENDS:=+ddnsto +luci-app-ddnsto +luci-i18n-ddnsto-zh-cn
 META_DESCRIPTION:=DDNS.TO内网穿透
 META_AUTHOR:=xiaobao
 META_TAGS:=net tool
