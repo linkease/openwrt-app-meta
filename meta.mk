@@ -16,7 +16,7 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
 include $(INCLUDE_DIR)/package.mk
 
-escape_json=$(call qstrip,$(subst ",\\\",$(subst \,\\\\\\\\,$(1))))
+escape_json=$(strip $(subst ",\",$(subst \,\\\\,$(1))))
 META_ESCAPED_TITLE:=$(call escape_json,$(META_TITLE))
 META_ESCAPED_DESCRIPTION:=$(call escape_json,$(META_DESCRIPTION))
 
@@ -44,19 +44,27 @@ endef
 define Build/Compile
 endef
 
+define Package/$(PKG_NAME)/JsonInfo
+{
+  "name": "$(META_BASENAME)",
+  "title": "$(META_ESCAPED_TITLE)",
+  "entry": "$(META_LUCI_ENTRY)",
+  "author": "$(META_AUTHOR)",
+  "website": "$(META_WEBSITE)",
+  "version": "$(PKG_VERSION)",
+  "release": $(PKG_RELEASE),
+  "description": "$(META_ESCAPED_DESCRIPTION)",
+  "tags": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach tag,$(META_TAGS),"$(tag)"$(comma))))],
+  "depends": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach dep,$(META_DEPENDS),"$(subst +,,$(dep))"$(comma))))]
+}
+endef
+
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/lib/opkg/meta $(1)/www/luci-static/resources/app-icons
 	if [ -f ./logo.png ]; then \
 		$(INSTALL_DATA) ./logo.png $(1)/www/luci-static/resources/app-icons/$(META_BASENAME).png ; \
 	fi;
-	echo "{\"name\":\"$(META_BASENAME)\",\"title\":\"$(META_ESCAPED_TITLE)\",\
-		\"entry\":\"$(META_LUCI_ENTRY)\",\"author\":\"$(META_AUTHOR)\",\
-		\"website\":\"$(META_WEBSITE)\",\"version\":\"$(PKG_VERSION)\",\
-		\"release\":$(PKG_RELEASE),\
-		\"description\":\"$(META_ESCAPED_DESCRIPTION)\",\"tags\":\
-		[$(patsubst %$(comma),%,$(subst $(space),,$(foreach tag,$(META_TAGS),\"$(tag)\"$(comma))))],\"depends\":\
-		[$(patsubst %$(comma),%,$(subst $(space),,$(foreach dep,$(META_DEPENDS),\"$(subst +,,$(dep))\"$(comma))))]}" \
-		> $(1)/usr/lib/opkg/meta/$(META_BASENAME).json
+	echo "$(call escape_json,$(call Package/$(PKG_NAME)/JsonInfo))" > $(1)/usr/lib/opkg/meta/$(META_BASENAME).json
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
