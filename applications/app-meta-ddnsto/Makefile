@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION=1.0.0
-PKG_RELEASE=1
+PKG_VERSION:=1.0.0
+PKG_RELEASE:=3
 META_TITLE:=DDNS.TO
 META_DEPENDS:=+ddnsto +luci-app-ddnsto +luci-i18n-ddnsto-zh-cn
 META_DESCRIPTION:=DDNS.TO内网穿透
