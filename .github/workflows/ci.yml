@@ -72,8 +72,19 @@ jobs:
         run: tail -n 200 /tmp/openwrt-sdk-build.log
 
       - name: Upload meta ipks
+        id: upload
         if: steps.compile.outputs.status == 'success' && !cancelled()
         env:
           RSYNC_PASSWORD: ${{ secrets.RSYNC_PASSWORD }}
           REPO_DEST: ${{ secrets.RSYNC_DEST }}
-        run: rsync -a --del ${SDK_NAME}/bin/packages/aarch64_generic/meta $REPO_DEST
+        run: |
+          rsync -a --del ${SDK_NAME}/bin/packages/aarch64_generic/meta $REPO_DEST
+          echo "::set-output name=status::success"
+
+      - name: Notify DB index
+        if: steps.upload.outputs.status == 'success' && !cancelled()
+        env:
+          DB_WEBHOOK_X_TOKEN: ${{ secrets.DB_WEBHOOK_X_TOKEN }}
+          DB_WEBHOOK_URL: ${{ secrets.DB_WEBHOOK_URL }}
+        run: |
+          curl -H "x-token: ${DB_WEBHOOK_X_TOKEN}" -XPOST ${DB_WEBHOOK_URL}
