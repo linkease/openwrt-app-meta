@@ -2,9 +2,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1
-PKG_RELEASE:=3
-META_TITLE:=ARP Binding
+PKG_VERSION:=1.0.0
+PKG_RELEASE:=1
+META_TITLE:=ARP绑定
 META_DEPENDS:=+luci-app-arpbind +luci-i18n-arpbind-zh-cn
 META_DESCRIPTION:=IP/MAC绑定
 META_AUTHOR:=LuCI Team
