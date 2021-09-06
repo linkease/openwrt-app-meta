@@ -9,7 +9,7 @@ META_DEPENDS:=+transmission-daemon-openssl +transmission-web-control +luci-app-t
 META_DESCRIPTION:=专业磁力种子下载工具
 META_AUTHOR:=The Transmission project
 META_TAGS:=net tool
-META_LUCI_ENTRY:=/cgi-bin/luci/admin/nas/transmission
+META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/transmission
 META_WEBSITE:=https://transmissionbt.com/
 
 include ../../meta.mk
