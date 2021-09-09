@@ -6,6 +6,7 @@
 
 META_NAME?=$(notdir ${CURDIR})
 META_BASENAME?=$(word 3,$(subst -, ,$(META_NAME)))
+META_ARCH?=all
 
 PKG_NAME?=$(META_NAME)
 PKG_RELEASE?=1
@@ -53,6 +54,7 @@ define Package/$(PKG_NAME)/JsonInfo
   "website": "$(META_WEBSITE)",
   "version": "$(PKG_VERSION)",
   "release": $(PKG_RELEASE),
+  "arch": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach arch,$(META_ARCH),"$(arch)"$(comma))))],
   "description": "$(META_ESCAPED_DESCRIPTION)",
   "tags": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach tag,$(META_TAGS),"$(tag)"$(comma))))],
   "depends": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach dep,$(META_DEPENDS),"$(subst +,,$(dep))"$(comma))))]

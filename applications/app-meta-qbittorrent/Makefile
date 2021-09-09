@@ -8,6 +8,7 @@ META_TITLE:=qBittorrent
 META_DEPENDS:=+qBittorrent-static +luci-app-qbittorrent +luci-i18n-qbittorrent-zh-cn
 META_DESCRIPTION:=专业磁力种子下载工具。
 META_AUTHOR:=The qBittorrent project
+META_ARCH:=x86_64 aarch64_cortex-a53
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/nas/qBittorrent
 META_WEBSITE:=https://www.qbittorrent.org/
