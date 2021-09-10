@@ -5,7 +5,7 @@ include $(TOPDIR)/rules.mk
 PKG_VERSION:=1.0.0
 PKG_RELEASE:=1
 META_TITLE:=FTP服务器
-META_DEPENDS:=+luci-app-vsftpd +luci-i18n-vsftpd-zh-cn +vsftpd-alt
+META_DEPENDS:=+vsftpd-alt +luci-app-vsftpd +luci-i18n-vsftpd-zh-cn
 META_DESCRIPTION:=一个完全免费的、开放源代码的ftp服务器软件
 META_AUTHOR:=Cezary Jackiewicz
 META_TAGS:=net tool

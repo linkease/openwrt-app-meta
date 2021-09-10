@@ -5,7 +5,7 @@ include $(TOPDIR)/rules.mk
 PKG_VERSION:=1.4.1
 PKG_RELEASE:=1
 META_TITLE:=RCLONE
-META_DEPENDS:=+rclone-ng +rclone +rclone-webui-react +luci-app-rclone
+META_DEPENDS:=+rclone +rclone-ng +rclone-webui-react +luci-app-rclone +luci-i18n-rclone-zh-cn
 META_DESCRIPTION:=Rclone是一个用于同步云平台文件和目录的工具
 META_AUTHOR:=ElonH
 META_ARCH:=x86_64 aarch64_generic aarch64_cortex-a53
