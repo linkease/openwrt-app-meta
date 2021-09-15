@@ -21,6 +21,7 @@ jobs:
         uses: actions/checkout@main
         with:
           path: 'meta'
+          fetch-depth: 5
 
       - name: Initialization environment
         env:
@@ -81,8 +82,18 @@ jobs:
           rsync -a --del ${SDK_NAME}/bin/packages/aarch64_generic/meta $REPO_DEST
           echo "::set-output name=status::success"
 
-      - name: Notify DB index
+      - name: Push to gitee
+        id: gitee
         if: steps.upload.outputs.status == 'success' && !cancelled()
+        env:
+          PUSH_TARGET: ${{ secrets.PUSH_TARGET_PREFIX }}/linkease/openwrt-app-meta.git
+        run: |
+          git -C meta remote add gitee "$PUSH_TARGET"
+          git -C meta push --all gitee
+          echo "::set-output name=status::success"
+
+      - name: Notify DB index
+        if: steps.gitee.outputs.status == 'success' && !cancelled()
         env:
           DB_WEBHOOK_X_TOKEN: ${{ secrets.DB_WEBHOOK_X_TOKEN }}
           DB_WEBHOOK_URL: ${{ secrets.DB_WEBHOOK_URL }}
