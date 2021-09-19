@@ -5,7 +5,7 @@ include $(TOPDIR)/rules.mk
 PKG_VERSION:=1.0.0
 PKG_RELEASE:=1
 META_TITLE:=xunyou
-META_DEPENDS:=+luci-app-xunyou +luci-i18n-xunyou-zh-cn
+META_DEPENDS:=+xunyou +luci-app-xunyou +luci-i18n-xunyou-zh-cn
 META_DESCRIPTION:=迅游是一款小巧且功能强大的网游加速器，迅游所采用的第五代网游加速技术能更有效地为您解决网游卡机、掉线、延时高、登录难等问题。
 META_AUTHOR:=xunyou
 META_TAGS:=net tool
