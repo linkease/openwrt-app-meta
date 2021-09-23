@@ -92,8 +92,18 @@ jobs:
           git -C meta push --all gitee
           echo "::set-output name=status::success"
 
+      - name: Retry Unshallow
+        id: retry
+        if: failure()
+        run: |
+          git -C meta fetch --unshallow origin || exit 1 
+          git -C meta gc
+          git -C meta count-objects -vH
+          git -C meta push --all gitee
+          echo "::set-output name=status::success"
+
       - name: Notify DB index
-        if: steps.gitee.outputs.status == 'success' && !cancelled()
+        if: (steps.gitee.outputs.status == 'success' || steps.retry.outputs.status == 'success') && !cancelled()
         env:
           DB_WEBHOOK_X_TOKEN: ${{ secrets.DB_WEBHOOK_X_TOKEN }}
           DB_WEBHOOK_URL: ${{ secrets.DB_WEBHOOK_URL }}
