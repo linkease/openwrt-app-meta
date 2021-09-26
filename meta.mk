@@ -63,6 +63,9 @@ endef
 
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/lib/opkg/meta $(1)/www/luci-static/resources/app-icons
+	if [ -d ./root ]; then \
+	  cp -pR ./root/* $(1)/; \
+	else true; fi
 	if [ -f ./logo.png ]; then \
 		$(INSTALL_DATA) ./logo.png $(1)/www/luci-static/resources/app-icons/$(META_BASENAME).png ; \
 	fi;

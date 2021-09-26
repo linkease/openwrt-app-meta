@@ -1,0 +1,8 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+	set transmission.@transmission[-1].web_home=/usr/share/transmission/web
+	commit transmission
+EOF
+
+exit 0
