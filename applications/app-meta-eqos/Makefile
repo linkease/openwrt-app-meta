@@ -3,15 +3,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 META_TITLE:=IP限速
-META_DEPENDS:=+luci-app-eqos +luci-i18n-eqos-zh-cn +luci-base +tc +kmod-sched-core +kmod-ifb
+META_DEPENDS:=+luci-app-eqos +luci-i18n-eqos-zh-cn
 META_DESCRIPTION:=简单的IP限速控制服务
 META_AUTHOR:=Jianhui Zhao
-META_ARCH:=x86_64 aarch64_generic aarch64_cortex-a53
 META_TAGS:=system tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/network/eqos
-META_WEBSITE:=https://github.com/neheb
+META_WEBSITE:=https://github.com/kiddin9
 
 include ../../meta.mk
 
