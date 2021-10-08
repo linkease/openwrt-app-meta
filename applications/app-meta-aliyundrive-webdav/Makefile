@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 META_TITLE:=阿里云盘WebDAV
 META_DEPENDS:=+aliyundrive-webdav +luci-i18n-aliyundrive-webdav-zh-cn +luci-app-aliyundrive-webdav
 META_DESCRIPTION:=阿里云盘WebDAV服务，主要使用场景为配合支持WebDAV协议的客户端实现直接观看云盘视频内容，支持上传文件，但受限于WebDAV协议不支持文件秒传。

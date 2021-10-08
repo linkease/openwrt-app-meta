@@ -5,7 +5,7 @@
 #
 
 META_NAME?=$(notdir ${CURDIR})
-META_BASENAME?=$(word 3,$(subst -, ,$(META_NAME)))
+META_BASENAME?=$(patsubst app-meta-%,%,$(META_NAME))
 META_ARCH?=all
 
 PKG_NAME?=$(META_NAME)
