@@ -26,7 +26,6 @@ define Package/$(PKG_NAME)
   CATEGORY:=Metadata
   TITLE:=$(META_TITLE)
   DEPENDS:=$(META_DEPENDS)
-  VERSION:=$(PKG_VERSION)
   PKGARCH:=all
 endef
 
