@@ -6,11 +6,11 @@ PKG_VERSION:=1.0.1
 PKG_RELEASE:=20220217
 META_TITLE:=Ubuntu
 META_DEPENDS:=+luci-app-ubuntu +luci-i18n-ubuntu-zh-cn
-META_DESCRIPTION:=Linkease-PC是为EasePi定制的一套Ubuntu系统。纯英文系统，欢迎各位极客玩家享用。 
+META_DESCRIPTION:=带Web远程桌面的Docker版Ubuntu。 
 META_AUTHOR:=xiaobao
-META_TAGS:=net tool
+META_TAGS:=system
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/ubuntu
-META_WEBSITE:=https://www.koolcenter.com/category/apps/?tag=ubuntu
+META_WEBSITE:=https://www.kasmweb.com
 
 include ../../meta.mk
 
