@@ -10,7 +10,7 @@ META_DESCRIPTION:=带Web远程桌面的Docker版Ubuntu，纯英文系统，欢�
 META_AUTHOR:=xiaobao
 META_TAGS:=system
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/ubuntu
-META_WEBSITE:=https://www.kasmweb.com
+META_WEBSITE:=https://doc.linkease.com/zh/guide/easepi/advanced.html#ubuntu
 
 include ../../meta.mk
 

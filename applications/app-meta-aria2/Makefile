@@ -10,7 +10,7 @@ META_DESCRIPTION:=Aria2是一款自由、跨平台命令行界面的下载管理
 META_AUTHOR:=Tatsuhiro Tsujikawa
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/aria2
-META_WEBSITE:=https://aria2.github.io/
+META_WEBSITE:=https://doc.linkease.com/zh/guide/easepi/common.html#aria2下载
 
 include ../../meta.mk
 

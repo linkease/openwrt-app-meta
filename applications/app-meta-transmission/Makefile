@@ -10,7 +10,7 @@ META_DESCRIPTION:=专业磁力种子下载工具
 META_AUTHOR:=The Transmission project
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/transmission
-META_WEBSITE:=https://transmissionbt.com/
+META_WEBSITE:=https://doc.linkease.com/zh/guide/easepi/common.html#transmission下载
 
 include ../../meta.mk
 

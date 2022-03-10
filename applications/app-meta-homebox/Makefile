@@ -11,7 +11,7 @@ META_AUTHOR:=Bradley Xu
 META_ARCH:=x86_64 aarch64_cortex-a53
 META_TAGS:=network tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/homebox
-META_WEBSITE:=https://github.com/XGHeaven/homebox
+META_WEBSITE:=https://doc.linkease.com/zh/guide/easepi/advanced.html#内网测速
 
 include ../../meta.mk
 

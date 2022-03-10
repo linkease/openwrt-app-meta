@@ -10,7 +10,7 @@ META_DESCRIPTION:=开源智能家居系统，将本地控制和隐私放在首�
 META_AUTHOR:=Home Assistant
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/homeassistant
-META_WEBSITE:=https://www.home-assistant.io/
+META_WEBSITE:=https://doc.linkease.com/zh/guide/easepi/advanced.html#home-assistant
 
 include ../../meta.mk
 

@@ -10,7 +10,7 @@ META_DESCRIPTION:=数据的安全之家。根据您的设置，从任何设备�
 META_AUTHOR:=nextcloud
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/nextcloud
-META_WEBSITE:=https://nextcloud.com/
+META_WEBSITE:=https://doc.linkease.com/zh/guide/easepi/advanced.html#nextcloud
 
 include ../../meta.mk
 

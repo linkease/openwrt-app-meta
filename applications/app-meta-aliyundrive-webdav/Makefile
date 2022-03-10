@@ -11,7 +11,7 @@ META_AUTHOR:=messense
 META_ARCH:=x86_64 aarch64_cortex-a53
 META_TAGS:=network tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/aliyundrive-webdav
-META_WEBSITE:=https://github.com/messense/aliyundrive-webdav
+META_WEBSITE:=https://doc.linkease.com/zh/guide/easepi/advanced.html#阿里云webdav
 
 include ../../meta.mk
 
