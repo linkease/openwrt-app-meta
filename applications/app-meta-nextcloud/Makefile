@@ -11,6 +11,7 @@ META_AUTHOR:=nextcloud
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/nextcloud
 META_WEBSITE:=https://nextcloud.com/
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/easepi/advanced.html\#nextcloud
 
 include ../../meta.mk
 

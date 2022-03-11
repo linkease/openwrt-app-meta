@@ -12,6 +12,7 @@ META_ARCH:=x86_64 aarch64_cortex-a53
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/nas/qBittorrent
 META_WEBSITE:=https://www.qbittorrent.org/
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/easepi/common.html\#qbittorrent下载
 
 include ../../meta.mk
 

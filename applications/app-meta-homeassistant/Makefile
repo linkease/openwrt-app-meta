@@ -11,6 +11,7 @@ META_AUTHOR:=Home Assistant
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/homeassistant
 META_WEBSITE:=https://www.home-assistant.io/
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/easepi/advanced.html\#home-assistant
 
 include ../../meta.mk
 

@@ -11,6 +11,7 @@ META_AUTHOR:=xiaobao
 META_TAGS:=system
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/ubuntu
 META_WEBSITE:=https://www.kasmweb.com
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/easepi/advanced.html\#ubuntu
 
 include ../../meta.mk
 
