@@ -11,6 +11,7 @@ META_AUTHOR:=Tatsuhiro Tsujikawa
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/aria2
 META_WEBSITE:=https://aria2.github.io/
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/easepi/common.html\#aria2下载
 
 include ../../meta.mk
 
