@@ -51,6 +51,7 @@ define Package/$(PKG_NAME)/JsonInfo
   "entry": "$(META_LUCI_ENTRY)",
   "author": "$(META_AUTHOR)",
   "website": "$(META_WEBSITE)",
+$(if $(META_TUTORIAL),  "tutorial": "$(META_TUTORIAL)"$(comma))
   "version": "$(PKG_VERSION)",
   "release": $(PKG_RELEASE),
   "arch": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach arch,$(META_ARCH),"$(arch)"$(comma))))],
