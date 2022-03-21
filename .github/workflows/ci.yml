@@ -1,6 +1,7 @@
 name: Build Meta
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -55,8 +56,13 @@ jobs:
           # CONFIG_SIGNED_PACKAGES is not set
           EOF
 
+      - name: Prepare Build dir
+        run: |
+          cp -a meta build
+          cp -a meta/dummy build/applications/
+
       - name: Load custom feeds
-        run: echo "src-link meta `pwd`/meta/applications" > ${SDK_NAME}/feeds.conf.default
+        run: echo "src-link meta `pwd`/build/applications" > ${SDK_NAME}/feeds.conf.default
 
       - name: Update feeds
         run: cd ${SDK_NAME} && ./scripts/feeds update meta && ./scripts/feeds install -a -p meta
