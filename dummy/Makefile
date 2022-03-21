@@ -14,7 +14,6 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=dummy
 PKG_VERSION:=1.0
 PKG_RELEASE:=1
-ARCH_PACKAGES:=all
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -34,6 +33,7 @@ define DummyPackage
     ifneq ($(4),)
         VERSION:=$(4)
     endif
+    PKGARCH:=all
   endef
 
   define Package/$(1)/install
