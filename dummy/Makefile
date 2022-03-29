@@ -45,5 +45,6 @@ define DummyPackage
 endef
 
 $(eval $(call DummyPackage,transmission-daemon-openssl,+transmission-daemon,,0.00))
+$(eval $(call DummyPackage,qBittorrent,+qBittorrent-static,,0.00))
 
 # call BuildPackage - OpenWrt buildroot signature
