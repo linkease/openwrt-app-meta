@@ -1,5 +1,5 @@
 #!/bin/sh
 
-fgrep -q "DISTRIB_RELEASE='19." /etc/openwrt_release || sed -i 's/\tprocd_kill /\t#procd_kill /g' /etc/init.d/qbittorrent
+fgrep -q "DISTRIB_RELEASE='19." /etc/openwrt_release || ( sed -i 's/\tprocd_kill /\t# procd_kill /g' /etc/init.d/qbittorrent && /etc/init.d/qbittorrent start )
 
 exit 0

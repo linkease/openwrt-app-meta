@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=4.3.7
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 META_TITLE:=qBittorrent
 META_DEPENDS:=+qBittorrent-static +luci-app-qbittorrent +luci-i18n-qbittorrent-zh-cn
 META_DESCRIPTION:=专业磁力种子下载工具。
