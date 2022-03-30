@@ -5,6 +5,6 @@ uci -q batch <<-EOF >/dev/null
 	commit transmission
 EOF
 
-fgrep -q "DISTRIB_RELEASE='19." /etc/openwrt_release && sed -i 's/reload_service(/reload_service0(/g' /etc/init.d/transmission
+sed -i 's/reload_service(/reload_service0(/g' /etc/init.d/transmission
 
 exit 0
