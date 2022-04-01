@@ -85,7 +85,7 @@ jobs:
           RSYNC_PASSWORD: ${{ secrets.RSYNC_PASSWORD }}
           REPO_DEST: ${{ secrets.RSYNC_DEST }}
         run: |
-          rsync -a --del ${SDK_NAME}/bin/packages/aarch64_generic/meta $REPO_DEST
+          rsync -a --del ${SDK_NAME}/bin/packages/aarch64_cortex-a53/meta $REPO_DEST
           echo "::set-output name=status::success"
 
       - name: Push to gitee
@@ -100,7 +100,7 @@ jobs:
 
       - name: Retry Unshallow
         id: retry
-        if: failure()
+        if: failure()  && !cancelled() && steps.upload.outputs.status == 'success'
         run: |
           git -C meta fetch --unshallow origin || exit 1 
           git -C meta gc
