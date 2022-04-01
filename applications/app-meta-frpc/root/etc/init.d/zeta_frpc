@@ -1,0 +1,17 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+USE_PROCD=1
+
+start_service() {
+    return 0
+}
+
+reload_service() {
+    [ -e /etc/init.d/frpc ] || return 0
+    grep -Fq service_triggers /etc/init.d/frpc || /etc/init.d/frpc restart
+}
+
+service_triggers() {
+    procd_add_reload_trigger "frpc"
+}
