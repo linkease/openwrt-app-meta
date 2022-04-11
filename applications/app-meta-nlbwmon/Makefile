@@ -9,7 +9,7 @@ META_DEPENDS:=+nlbwmon +luci-i18n-nlbwmon-zh-cn +luci-app-nlbwmon
 META_DESCRIPTION:=对局域网的主机流量进行监控。
 META_AUTHOR:=jow
 META_TAGS:=net tool
-META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/frpc
+META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/nlbw
 META_WEBSITE:=https://github.com/jow-/nlbwmon
 
 include ../../meta.mk
