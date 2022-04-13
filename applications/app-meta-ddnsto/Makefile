@@ -4,9 +4,9 @@ include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.0
 PKG_RELEASE:=3
-META_TITLE:=DDNS.TO
+META_TITLE:=DDNSTO路由远程
 META_DEPENDS:=+ddnsto +luci-app-ddnsto +luci-i18n-ddnsto-zh-cn
-META_DESCRIPTION:=DDNS.TO内网穿透
+META_DESCRIPTION:=DDNS.TO内网穿透，可以外网远程你的路由器
 META_AUTHOR:=xiaobao
 META_ARCH:=x86_64 aarch64_cortex-a53
 META_TAGS:=net tool
