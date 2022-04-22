@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=2.0
+PKG_VERSION:=2.1
 PKG_RELEASE:=27
 META_TITLE:=多线多拨
 META_DEPENDS:=+luci-i18n-mwan3-zh-cn +luci-app-mwan3 +luci-app-mwan3helper +luci-i18n-mwan3helper-zh-cn +mwan3 +luci-app-syncdial

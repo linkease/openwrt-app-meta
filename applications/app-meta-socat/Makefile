@@ -3,9 +3,9 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=20200824
-PKG_RELEASE:=4
+PKG_RELEASE:=5
 META_TITLE:=Socat
-META_DEPENDS:=+socat +luci-app-socat +luci-i18n-socat-zh-cn
+META_DEPENDS:=+luci-app-socat +luci-i18n-socat-zh-cn
 META_DESCRIPTION:=Socat 是 Linux 下的一个多功能的网络工具，名字来由是「Socket CAT」。其功能与有瑞士军刀之称的 Netcat 类似，可以看做是 Netcat 的加强版。
 META_AUTHOR:=Lienol <lawlienol@gmail.com>
 META_TAGS:=network tool
