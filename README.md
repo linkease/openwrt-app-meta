@@ -14,9 +14,19 @@
 
 1. `META_TITLE:=` 使用官方名称，如果有中文就用中文
 2. `META_AUTHOR:=` 是作者名称，如果是非个人作者则填组织或者公司名称
-3. `META_DEPENDS:=` 的第一个应该是能代表这个APP的主包，方便作为版本更新的依据
+3. `META_DEPENDS:=` 的第一个应该是能代表这个APP的主包，方便作为版本更新的依据，不要将其他插件可能依赖的包加到这里，以免卸载时将其他插件也卸载了，如果需要添加额外的包，参考下面的[#依赖额外的包](#依赖额外的包)
 4. `META_ARCH:=` 用来填写支持的处理器架构，如果是架构无关的应用则不需要这一行
 
+
+## 依赖额外的包
+1. 编辑`dummy/Makefile`，添加一行`$(eval $(call DummyPackage,插件名-deps,+额外依赖,,0.00))`，例如`serverchan`添加额外的`+iputils-arping +curl +jq`依赖：
+    ```Makefile
+    $(eval $(call DummyPackage,serverchan-deps,+iputils-arping +curl +jq,,0.00))
+    ```
+2. 在之前的`Makefile`的`META_DEPENDS:=`位置添加`+插件名-deps`，例如`serverchan`：
+    ```Makefile
+    META_DEPENDS:=+luci-app-serverchan +serverchan-deps
+    ```
 
 # 在线提交流程
 
