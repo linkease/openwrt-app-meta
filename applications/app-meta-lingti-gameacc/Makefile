@@ -10,7 +10,7 @@ META_DESCRIPTION:=灵缇游戏加速器
 META_AUTHOR:=eSir Playground
 META_TAGS:=network tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/lingti
-META_WEBSITE:=https://github.com/esirplayground/luci-app-LingTiGameAcc
+META_WEBSITE:=https://www.lingti.com/
 
 include ../../meta.mk
 

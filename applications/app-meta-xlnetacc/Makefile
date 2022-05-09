@@ -10,7 +10,7 @@ META_DESCRIPTION:=上网提速工具
 META_AUTHOR:=Sense <sensec@gmail.com>
 META_TAGS:=network tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/xlnetacc
-META_WEBSITE:=https://github.com/sensec/luci-app-xlnetacc
+META_WEBSITE:=https://k.xunlei.com/
 
 include ../../meta.mk
 
