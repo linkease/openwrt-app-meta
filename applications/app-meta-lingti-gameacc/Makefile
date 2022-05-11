@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=20210426
+PKG_VERSION:=1.4.4
 PKG_RELEASE:=1
 META_TITLE:=灵缇加速器
 META_DEPENDS:=+luci-app-LingTiGameAcc
