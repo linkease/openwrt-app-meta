@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=20210426
-PKG_RELEASE:=1
+PKG_VERSION:=1.0.5
+PKG_RELEASE:=4
 META_TITLE:=迅雷快鸟
 META_DEPENDS:=+luci-app-xlnetacc
 META_DESCRIPTION:=上网提速工具
