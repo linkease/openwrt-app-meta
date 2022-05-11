@@ -5,7 +5,7 @@ include $(TOPDIR)/rules.mk
 PKG_VERSION:=1.0.5
 PKG_RELEASE:=4
 META_TITLE:=迅雷快鸟
-META_DEPENDS:=+luci-app-xlnetacc
+META_DEPENDS:=+luci-app-xlnetacc +luci-i18n-xlnetacc-zh-cn
 META_DESCRIPTION:=上网提速工具
 META_AUTHOR:=Sense <sensec@gmail.com>
 META_TAGS:=network tool
