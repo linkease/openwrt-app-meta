@@ -8,7 +8,7 @@ META_TITLE:=SFTP服务
 META_DEPENDS:=+openssh-sftp-server
 META_DESCRIPTION:=SFTP服务配置
 META_AUTHOR:=OpenBSD Project
-META_TAGS:=network tool
+META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/system/admin/dropbear
 META_WEBSITE:=https://www.openssh.com/
 

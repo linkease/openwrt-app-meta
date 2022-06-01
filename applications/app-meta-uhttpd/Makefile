@@ -8,7 +8,7 @@ META_TITLE:=uHTTPd
 META_DEPENDS:=+luci-app-uhttpd +luci-i18n-uhttpd-zh-cn
 META_DESCRIPTION:=uHTTPd服务配置
 META_AUTHOR:=Daniel Dickinson <openwrt@daniel.thecshore.com>
-META_TAGS:=network tool
+META_TAGS:=net service
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/uhttpd
 META_WEBSITE:=https://github.com/openwrt/luci/tree/master/applications/luci-app-uhttpd
 

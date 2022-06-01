@@ -8,7 +8,7 @@ META_TITLE:=Zerotier
 META_DEPENDS:=+zerotier +luci-app-zerotier +luci-i18n-zerotier-zh-cn
 META_DESCRIPTION:=非常简单易用的内网穿透工具，能实现虚拟局域网的组建。
 META_AUTHOR:=zerotier
-META_TAGS:=net tool
+META_TAGS:=networking service
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/vpn/zerotier
 META_WEBSITE:=https://www.zerotier.com/
 

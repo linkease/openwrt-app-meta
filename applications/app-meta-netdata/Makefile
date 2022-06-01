@@ -8,7 +8,7 @@ META_TITLE:=NetData系统监控
 META_DEPENDS:=+netdata +luci-app-netdata +luci-i18n-netdata-zh-cn
 META_DESCRIPTION:=一眼掌握机器运行状态/系统效能关键指标
 META_AUTHOR:=netdata
-META_TAGS:=system tool
+META_TAGS:=system monitor
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/status/netdata
 META_WEBSITE:=https://www.netdata.cloud/
 

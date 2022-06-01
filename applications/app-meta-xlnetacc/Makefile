@@ -8,7 +8,7 @@ META_TITLE:=迅雷快鸟
 META_DEPENDS:=+luci-app-xlnetacc +luci-i18n-xlnetacc-zh-cn
 META_DESCRIPTION:=上网提速工具
 META_AUTHOR:=Sense <sensec@gmail.com>
-META_TAGS:=network tool
+META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/xlnetacc
 META_WEBSITE:=https://k.xunlei.com/
 
