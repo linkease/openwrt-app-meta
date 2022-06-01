@@ -20,6 +20,8 @@ include $(INCLUDE_DIR)/package.mk
 escape_json=$(strip $(subst ",\",$(subst \,\\\\,$(1))))
 META_ESCAPED_TITLE:=$(call escape_json,$(META_TITLE))
 META_ESCAPED_DESCRIPTION:=$(call escape_json,$(META_DESCRIPTION))
+META_ESCAPED_TITLE.en:=$(call escape_json,$(META_TITLE.en))
+META_ESCAPED_DESCRIPTION.en:=$(call escape_json,$(META_DESCRIPTION.en))
 
 define Package/$(PKG_NAME)
   SECTION:=meta
@@ -48,6 +50,7 @@ define Package/$(PKG_NAME)/JsonInfo
 {
   "name": "$(META_BASENAME)",
   "title": "$(META_ESCAPED_TITLE)",
+$(if $(META_ESCAPED_TITLE.en),  "title_en": "$(META_ESCAPED_TITLE.en)"$(comma))
   "entry": "$(META_LUCI_ENTRY)",
   "author": "$(META_AUTHOR)",
   "website": "$(META_WEBSITE)",
@@ -56,6 +59,7 @@ $(if $(META_TUTORIAL),  "tutorial": "$(META_TUTORIAL)"$(comma))
   "release": $(PKG_RELEASE),
   "arch": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach arch,$(META_ARCH),"$(arch)"$(comma))))],
   "description": "$(META_ESCAPED_DESCRIPTION)",
+$(if $(META_ESCAPED_DESCRIPTION.en),  "description_en": "$(META_ESCAPED_DESCRIPTION.en)"$(comma))
   "tags": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach tag,$(META_TAGS),"$(tag)"$(comma))))],
   "depends": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach dep,$(META_DEPENDS),"$(subst +,,$(dep))"$(comma))))]
 }
