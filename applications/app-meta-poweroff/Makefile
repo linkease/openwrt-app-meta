@@ -5,8 +5,10 @@ include $(TOPDIR)/rules.mk
 PKG_VERSION:=1.0.0
 PKG_RELEASE:=1
 META_TITLE:=关机
+META_TITLE.en:=Poweroff
 META_DEPENDS:=+luci-i18n-poweroff-zh-cn +luci-app-poweroff
 META_DESCRIPTION:=简单的关机
+META_DESCRIPTION.en:=Shutdown your device
 META_AUTHOR:=eSir Playground
 META_ARCH:=x86_64 aarch64_generic aarch64_cortex-a53
 META_TAGS:=system tool

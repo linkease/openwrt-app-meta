@@ -7,6 +7,7 @@ PKG_RELEASE:=5
 META_TITLE:=Transmission
 META_DEPENDS:=+transmission-daemon-openssl +transmission-web-control +luci-app-transmission +luci-i18n-transmission-zh-cn
 META_DESCRIPTION:=专业磁力种子下载工具
+META_DESCRIPTION.en:=Transmission is a cross-platform BitTorrent client.
 META_AUTHOR:=The Transmission project
 META_TAGS:=download tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/transmission
