@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.2.11
+PKG_VERSION:=0.2.12
 PKG_RELEASE:=1
 META_TITLE:=DiskMan磁盘管理
 META_TITLE.en:=DiskMan
