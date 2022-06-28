@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
+PKG_VERSION:=1.0.2
 PKG_RELEASE:=1
 META_TITLE:=Home Assistant
 META_DEPENDS:=+luci-app-homeassistant +luci-i18n-homeassistant-zh-cn
