@@ -113,6 +113,9 @@ jobs:
           git -C meta push --all gitee
           echo "::set-output name=status::success"
 
+      - name: New Pending
+        run: git -C meta push origin HEAD:pending
+
       - name: Notify DB index
         if: (steps.gitee.outputs.status == 'success' || steps.retry.outputs.status == 'success') && !cancelled()
         env:
