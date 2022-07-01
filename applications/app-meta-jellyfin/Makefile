@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.1.1
-PKG_RELEASE:=20220628
+PKG_RELEASE:=20220701
 META_TITLE:=Jellyfin私有影院
 META_DEPENDS:=+luci-app-jellyfin +luci-i18n-jellyfin-zh-cn
 META_DESCRIPTION:=Jellyfin是一个免费自由的媒体系统软件，可以让您方便地管理和串流您的媒体。 
