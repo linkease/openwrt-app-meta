@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.1.3
+PKG_VERSION:=1.1.4
 PKG_RELEASE:=20220714
 META_TITLE:=Jellyfin私有影院
 META_TITLE.en:=Jellyfin
