@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.5.1
+PKG_VERSION:=1.8.0
 PKG_RELEASE:=1
 META_TITLE:=阿里云盘WebDAV
 META_DEPENDS:=+aliyundrive-webdav +luci-i18n-aliyundrive-webdav-zh-cn +luci-app-aliyundrive-webdav
