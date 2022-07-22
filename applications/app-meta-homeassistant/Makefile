@@ -5,7 +5,7 @@ include $(TOPDIR)/rules.mk
 PKG_VERSION:=1.0.2
 PKG_RELEASE:=1
 META_TITLE:=Home Assistant
-META_DEPENDS:=+luci-app-homeassistant +luci-i18n-homeassistant-zh-cn
+META_DEPENDS:=+luci-app-homeassistant +luci-i18n-homeassistant-zh-cn +docker-deps
 META_DESCRIPTION:=开源智能家居系统，将本地控制和隐私放在首位。
 META_DESCRIPTION.en:=Open source home automation that puts local control and privacy first.
 META_AUTHOR:=Home Assistant
