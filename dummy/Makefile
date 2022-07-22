@@ -44,6 +44,8 @@ define DummyPackage
 
 endef
 
+$(eval $(call DummyPackage,docker-deps,+docker,,0.00))
+
 $(eval $(call DummyPackage,transmission-daemon-openssl,+transmission-daemon,,0.00))
 $(eval $(call DummyPackage,qBittorrent,+qBittorrent-static,,0.00))
 $(eval $(call DummyPackage,serverchan-deps,+iputils-arping +curl +jq,,0.00))
