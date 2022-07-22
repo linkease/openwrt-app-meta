@@ -5,7 +5,7 @@ include $(TOPDIR)/rules.mk
 PKG_VERSION:=1.0.0
 PKG_RELEASE:=20220718
 META_TITLE:=Jackett
-META_DEPENDS:=+luci-app-jackett +luci-i18n-jackett-zh-cn
+META_DEPENDS:=+luci-app-jackett +luci-i18n-jackett-zh-cn +docker-deps
 META_DESCRIPTION:=Jackett 是维护索引器抓取和翻译逻辑的单一存储库 - 消除了其他应用程序的负担。
 META_DESCRIPTION.en:=Jackett is a single repository of maintained indexer scraping & translation logic - removing the burden from other apps.
 META_AUTHOR:=Jackett
