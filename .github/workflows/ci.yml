@@ -2,6 +2,11 @@ name: Build Meta
 
 on:
   workflow_dispatch:
+    inputs:
+      test:
+        description: 'Just test build, skip push'
+        required: false 
+        type: boolean
   push:
     branches:
       - main
@@ -85,7 +90,7 @@ jobs:
 
       - name: Upload meta ipks
         id: upload
-        if: steps.compile.outputs.status == 'success' && !cancelled()
+        if: steps.compile.outputs.status == 'success' && !cancelled() && !inputs.test
         env:
           RSYNC_PASSWORD: ${{ secrets.RSYNC_PASSWORD }}
           REPO_DEST: ${{ secrets.RSYNC_DEST }}
@@ -95,7 +100,7 @@ jobs:
 
       - name: Push to gitee
         id: gitee
-        if: steps.upload.outputs.status == 'success' && !cancelled()
+        if: steps.upload.outputs.status == 'success' && !cancelled() && !inputs.test
         env:
           PUSH_TARGET: ${{ secrets.PUSH_TARGET_PREFIX }}/linkease/openwrt-app-meta.git
         run: |
@@ -105,7 +110,7 @@ jobs:
 
       - name: Retry Unshallow
         id: retry
-        if: failure()  && !cancelled() && steps.upload.outputs.status == 'success'
+        if: failure() && !cancelled() && steps.upload.outputs.status == 'success' && !inputs.test
         run: |
           git -C meta fetch --unshallow origin || exit 1 
           git -C meta gc
@@ -114,10 +119,11 @@ jobs:
           echo "::set-output name=status::success"
 
       - name: New Pending
+        if: (!inputs.test)
         run: git -C meta push origin HEAD:pending
 
       - name: Notify DB index
-        if: (steps.gitee.outputs.status == 'success' || steps.retry.outputs.status == 'success') && !cancelled()
+        if: (steps.gitee.outputs.status == 'success' || steps.retry.outputs.status == 'success') && !cancelled() && !inputs.test
         env:
           DB_WEBHOOK_X_TOKEN: ${{ secrets.DB_WEBHOOK_X_TOKEN }}
           DB_WEBHOOK_URL: ${{ secrets.DB_WEBHOOK_URL }}
