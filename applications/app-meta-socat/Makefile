@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=20200824
-PKG_RELEASE:=5
+PKG_VERSION:=20220816
+PKG_RELEASE:=1
 META_TITLE:=Socat端口转发
 META_TITLE.en:=Socat Forwarder
 META_DEPENDS:=+luci-app-socat +luci-i18n-socat-zh-cn
