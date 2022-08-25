@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=3.0.0
-PKG_RELEASE:=1
+PKG_VERSION:=3.0.2
+PKG_RELEASE:=6
 META_TITLE:=DDNSTO路由远程
 META_TITLE.en:=DDNS.TO
 META_DEPENDS:=+ddnsto +luci-app-ddnsto +luci-i18n-ddnsto-zh-cn
