@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
-PKG_RELEASE:=1
+PKG_VERSION:=1.1.0
+PKG_RELEASE:=20220830
 META_TITLE:=Heimdall
 META_DEPENDS:=+luci-i18n-heimdall-zh-cn +luci-app-heimdall +docker-deps
 META_DESCRIPTION:=Heimdall 应用程序仪表板是所有 Web 应用程序的仪表板。不过，它不需要仅限于应用程序，您可以添加任何您喜欢的链接
