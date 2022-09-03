@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.1.0
-PKG_RELEASE:=20220830
+PKG_RELEASE:=20220903
 META_TITLE:=NAS媒体工具
 META_TITLE.en:=NAS Tools
 META_DEPENDS:=+luci-i18n-nastools-zh-cn +luci-app-nastools +docker-deps
