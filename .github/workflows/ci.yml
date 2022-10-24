@@ -82,7 +82,7 @@ jobs:
         run: |
           cd ${SDK_NAME}
           bash -c 'set -o pipefail ; make -j1 V=s defconfig package/{compile,index} 2>&1 | tee /tmp/openwrt-sdk-build.log'
-          echo "::set-output name=status::success"
+          echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Last fail log
         if: failure()
@@ -96,7 +96,7 @@ jobs:
           REPO_DEST: ${{ secrets.RSYNC_DEST }}
         run: |
           rsync -a --del ${SDK_NAME}/bin/packages/aarch64_cortex-a53/meta $REPO_DEST
-          echo "::set-output name=status::success"
+          echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Push to gitee
         id: gitee
@@ -106,7 +106,7 @@ jobs:
         run: |
           git -C meta remote add gitee "$PUSH_TARGET"
           git -C meta push --all gitee
-          echo "::set-output name=status::success"
+          echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Retry Unshallow
         id: retry
@@ -116,7 +116,7 @@ jobs:
           git -C meta gc
           git -C meta count-objects -vH
           git -C meta push --all gitee
-          echo "::set-output name=status::success"
+          echo "status=success" >> $GITHUB_OUTPUT
 
       - name: New Pending
         if: (!inputs.test)
