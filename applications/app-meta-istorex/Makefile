@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.0.4
+PKG_VERSION:=0.0.4.1
 PKG_RELEASE:=1
 META_TITLE:=istorex
 META_TITLE.en:=istorex
