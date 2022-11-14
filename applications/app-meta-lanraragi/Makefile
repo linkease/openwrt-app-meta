@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.0
-PKG_RELEASE:=20221106
+PKG_RELEASE:=20221114
 META_TITLE:=LANraragi电子书
 META_TITLE.en:=LANraragi
 META_DEPENDS:=+luci-app-lanraragi +luci-i18n-lanraragi-zh-cn +docker-deps
