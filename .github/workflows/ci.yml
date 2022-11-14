@@ -129,3 +129,10 @@ jobs:
           DB_WEBHOOK_URL: ${{ secrets.DB_WEBHOOK_URL }}
         run: |
           curl -H "x-token: ${DB_WEBHOOK_X_TOKEN}" -XPOST ${DB_WEBHOOK_URL}
+
+      - name: Upload test ipks
+        uses: actions/upload-artifact@main
+        if: steps.compile.outputs.status == 'success' && !cancelled() && inputs.test
+        with:
+          name: meta
+          path: ${{ env.SDK_NAME }}/bin/packages/aarch64_cortex-a53/meta
