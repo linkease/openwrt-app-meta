@@ -9,4 +9,8 @@ uci -q batch <<-EOF >/dev/null || exit 1
     commit jellyfin
 EOF
 
-/usr/libexec/istorec/jellyfin.sh install
+if [ -f /usr/libexec/istorec/jellyfin.sh ]; then
+    /usr/libexec/istorec/jellyfin.sh install
+else
+    /usr/share/jellyfin/install.sh install
+fi
