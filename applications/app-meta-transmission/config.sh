@@ -12,4 +12,7 @@ uci -q batch <<-EOF >/dev/null || exit 1
     commit transmission
 EOF
 
+mkdir -p "$ISTORE_DL_DIR/Transmission" "$ISTORE_CACHE_DIR/Transmission"
+chmod 777 "$ISTORE_DL_DIR/Transmission" "$ISTORE_CACHE_DIR/Transmission"
+
 /etc/init.d/transmission restart

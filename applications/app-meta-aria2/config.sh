@@ -39,4 +39,7 @@ add_trackers(){
 
 add_trackers
 
+mkdir -p "$ISTORE_DL_DIR/Aria2"
+chmod 777 "$ISTORE_DL_DIR/Aria2"
+
 /etc/init.d/aria2 restart

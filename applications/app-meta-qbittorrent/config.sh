@@ -12,4 +12,7 @@ uci -q batch <<-EOF >/dev/null || exit 1
     commit qbittorrent
 EOF
 
+mkdir -p "$ISTORE_DL_DIR/qBittorrent" "$ISTORE_CACHE_DIR/qBittorrent"
+chmod 777 "$ISTORE_DL_DIR/qBittorrent" "$ISTORE_CACHE_DIR/qBittorrent"
+
 /etc/init.d/qbittorrent restart
