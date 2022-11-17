@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.1.0
-PKG_RELEASE:=20220830
+PKG_RELEASE:=20221114
 META_TITLE:=nextcloud
 META_DEPENDS:=+luci-app-nextcloud +luci-i18n-nextcloud-zh-cn +docker-deps
 META_DESCRIPTION:=数据的安全之家。根据您的设置，从任何设备访问和共享您的文件、日历、联系人、邮件等
