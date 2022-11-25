@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
+PKG_VERSION:=1.0.1
 PKG_RELEASE:=20221115
 META_TITLE:=SysTools工具集
 META_TITLE.en:=SysTools
