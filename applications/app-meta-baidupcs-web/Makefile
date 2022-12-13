@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
-PKG_RELEASE:=1
+PKG_VERSION:=3.7.4
+PKG_RELEASE:=2
 META_TITLE:=BaiduPCS-Web
 META_DEPENDS:=+baidupcs-web +luci-app-baidupcs-web
 META_DESCRIPTION:=基于BaiduPCS-Go, 可以让你高效的使用百度云。
