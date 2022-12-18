@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.0
 PKG_RELEASE:=20221117
-META_TITLE:=Xunlei
+META_TITLE:=迅雷下载
 META_TITLE.en:=Xunlei
 META_DEPENDS:=+luci-app-xunlei +luci-i18n-xunlei-zh-cn +docker-deps
 META_DESCRIPTION:=Xunlei是一个下载工具。
