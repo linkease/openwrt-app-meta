@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=2.0.1.6
+PKG_VERSION:=2.0.1.7
 PKG_RELEASE:=1
 META_TITLE:=迅游
 META_DEPENDS:=+xunyou +luci-app-xunyou +luci-i18n-xunyou-zh-cn
@@ -11,7 +11,7 @@ META_AUTHOR:=xunyou
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/xunyou
 META_WEBSITE:=https://www.xunyou.com/
-META_ARCH:=aarch64_cortex-a53
+META_ARCH:=x86_64 aarch64_cortex-a53
 
 include ../../meta.mk
 
