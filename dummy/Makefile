@@ -50,4 +50,7 @@ $(eval $(call DummyPackage,transmission-daemon-openssl,+transmission-daemon,,0.0
 $(eval $(call DummyPackage,qBittorrent,+qBittorrent-static,,0.00))
 $(eval $(call DummyPackage,serverchan-deps,+iputils-arping +curl +jq,,0.00))
 
+$(eval $(call DummyPackage,kmod-ipt-socket,+kmod-ipt-tproxy,,0.00))
+$(eval $(call DummyPackage,iptables-mod-socket,+iptables-mod-tproxy,,0.00))
+
 # call BuildPackage - OpenWrt buildroot signature
