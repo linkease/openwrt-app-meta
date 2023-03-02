@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=3.11.0
-PKG_RELEASE:=2
+PKG_VERSION:=3.12.2
+PKG_RELEASE:=1
 META_TITLE:=alist网盘
 META_TITLE.en:=Alist Net disk
 META_DEPENDS:=+luci-i18n-alist-zh-cn +alist +luci-app-alist
