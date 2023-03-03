@@ -11,7 +11,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=dummy
+PKG_NAME:=dummy-common
 PKG_VERSION:=1.0
 PKG_RELEASE:=1
 
@@ -27,8 +27,8 @@ define DummyPackage
   define Package/$(1)
     SECTION:=dummy
     CATEGORY:=Dummy
-    SUBMENU:=Deps or backport for meta
-    TITLE:=dummy $(1)
+    SUBMENU:=Common modules
+    TITLE:=compatible for $(1)
     DEPENDS:=$(2)
     PKG_FLAGS:=$(3)
     ifneq ($(4),)
@@ -45,12 +45,8 @@ define DummyPackage
 
 endef
 
-# compat for meta
-$(eval $(call DummyPackage,transmission-daemon-openssl,+transmission-daemon,,0.00))
-$(eval $(call DummyPackage,qBittorrent,+qBittorrent-static,,0.00))
-
-# plugin deps
-$(eval $(call DummyPackage,docker-deps,+docker,,0.00))
-$(eval $(call DummyPackage,serverchan-deps,+iputils-arping +curl +jq,,0.00))
+$(eval $(call DummyPackage,kmod-inet-diag,+kmod-netlink-diag,,0.00-0))
+$(eval $(call DummyPackage,kmod-ipt-socket,+kmod-ipt-tproxy,,0.00-0))
+$(eval $(call DummyPackage,iptables-mod-socket,+iptables-mod-tproxy,,0.00-0))
 
 # call BuildPackage - OpenWrt buildroot signature
