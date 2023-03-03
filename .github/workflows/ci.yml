@@ -74,13 +74,13 @@ jobs:
       - name: Load custom feeds
         run: |
           echo "src-link compat `pwd`/build/compat" > ${SDK_NAME}/feeds.conf.default
-          echo "src-link meta `pwd`/build/applications" > ${SDK_NAME}/feeds.conf.default
+          echo "src-link meta `pwd`/build/applications" >> ${SDK_NAME}/feeds.conf.default
 
       - name: Update feeds
         run: |
           cd ${SDK_NAME} && ./scripts/feeds update compat meta
-          ./scripts/feeds install -a -p compat
-          ./scripts/feeds install -a -p meta
+          ./scripts/feeds install -a -p compat -d y
+          ./scripts/feeds install -a -p meta -d y
 
       - name: Compile Meta
         id: compile
@@ -140,7 +140,7 @@ jobs:
         uses: actions/upload-artifact@main
         if: steps.compile.outputs.status == 'success' && !cancelled() && inputs.test
         with:
-          name: meta
+          name: ipks
           path: |
             ${{ env.SDK_NAME }}/bin/packages/aarch64_cortex-a53/compat
             ${{ env.SDK_NAME }}/bin/packages/aarch64_cortex-a53/meta
