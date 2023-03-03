@@ -49,6 +49,15 @@ jobs:
       - name: Unpack SDK
         run: tar -xJf ${SDK_NAME}.tar.xz
 
+      - name: Write build key
+        if: env.BUILD_KEY != ''
+        env:
+          BUILD_KEY: ${{ secrets.BUILD_KEY }}
+        run: |
+          echo "untrusted comment: istore key" > ${SDK_NAME}/key-build
+          echo "$BUILD_KEY" >> ${SDK_NAME}/key-build
+          cat meta/.github/workflows/key-build.pub > ${SDK_NAME}/key-build.pub
+
       - name: Clean Code
         run: |
           rm -f ${SDK_NAME}/package/linux/modules/*
@@ -63,7 +72,7 @@ jobs:
           # CONFIG_ALL_NONSHARED is not set
           # CONFIG_ALL_KMODS is not set
           CONFIG_ALL=y
-          # CONFIG_SIGNED_PACKAGES is not set
+          CONFIG_SIGNED_PACKAGES=y
           EOF
 
       - name: Prepare Build dir
