@@ -72,10 +72,15 @@ jobs:
           cp -a meta/dummy build/applications/
 
       - name: Load custom feeds
-        run: echo "src-link meta `pwd`/build/applications" > ${SDK_NAME}/feeds.conf.default
+        run: |
+          echo "src-git compat https://github.com/jjm2473/openwrt-compat.git;main" > ${SDK_NAME}/feeds.conf.default
+          echo "src-link meta `pwd`/build/applications" >> ${SDK_NAME}/feeds.conf.default
 
       - name: Update feeds
-        run: cd ${SDK_NAME} && ./scripts/feeds update meta && ./scripts/feeds install -a -p meta
+        run: |
+          cd ${SDK_NAME} && ./scripts/feeds update compat meta
+          ./scripts/feeds install -a -p compat -d y
+          ./scripts/feeds install -a -p meta -d y
 
       - name: Compile Meta
         id: compile
@@ -95,6 +100,7 @@ jobs:
           RSYNC_PASSWORD: ${{ secrets.RSYNC_PASSWORD }}
           REPO_DEST: ${{ secrets.RSYNC_DEST }}
         run: |
+          rsync -a --del ${SDK_NAME}/bin/packages/aarch64_cortex-a53/compat $REPO_DEST
           rsync -a --del ${SDK_NAME}/bin/packages/aarch64_cortex-a53/meta $REPO_DEST
           echo "status=success" >> $GITHUB_OUTPUT
 
@@ -134,5 +140,7 @@ jobs:
         uses: actions/upload-artifact@main
         if: steps.compile.outputs.status == 'success' && !cancelled() && inputs.test
         with:
-          name: meta
-          path: ${{ env.SDK_NAME }}/bin/packages/aarch64_cortex-a53/meta
+          name: ipks
+          path: |
+            ${{ env.SDK_NAME }}/bin/packages/aarch64_cortex-a53/compat
+            ${{ env.SDK_NAME }}/bin/packages/aarch64_cortex-a53/meta
