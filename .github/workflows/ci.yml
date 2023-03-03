@@ -73,7 +73,7 @@ jobs:
 
       - name: Load custom feeds
         run: |
-          echo "src-link compat `pwd`/build/compat" > ${SDK_NAME}/feeds.conf.default
+          echo "src-git compat https://github.com/jjm2473/openwrt-compat.git;main" > ${SDK_NAME}/feeds.conf.default
           echo "src-link meta `pwd`/build/applications" >> ${SDK_NAME}/feeds.conf.default
 
       - name: Update feeds
