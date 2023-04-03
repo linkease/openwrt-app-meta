@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
+PKG_VERSION:=1.0.1
 PKG_RELEASE:=20230403
 META_TITLE:=访问AP/光猫
 META_TITLE.en:=Access AP / Modem
