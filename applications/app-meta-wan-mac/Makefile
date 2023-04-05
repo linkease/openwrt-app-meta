@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
-PKG_RELEASE:=20230404
+PKG_VERSION:=1.0.1
+PKG_RELEASE:=20230405
 META_TITLE:=MAC地址生成器
 META_TITLE.en:=MAC Generator
 META_DEPENDS:=+luci-app-wan-mac +luci-i18n-wan-mac-zh-cn
