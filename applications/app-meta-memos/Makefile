@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
-PKG_RELEASE:=20221118
+PKG_VERSION:=1.0.2
+PKG_RELEASE:=20230412
 META_TITLE:=Memos知识管理
 META_TITLE.en:=Memos
 META_DEPENDS:=+luci-app-memos +luci-i18n-memos-zh-cn +docker-deps
