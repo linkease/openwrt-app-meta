@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.1.13
+PKG_VERSION:=0.1.14
 PKG_RELEASE:=1
 META_TITLE:=阿里云盘Fuse
 META_TITLE.en:=Aliyun Drive Fuse
