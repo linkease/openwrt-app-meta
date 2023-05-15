@@ -6,7 +6,7 @@
 uci -q batch <<-EOF >/dev/null || exit 1
     set qbittorrent.main.profile="$ISTORE_CONF_DIR/qBittorrent"
     set qbittorrent.main.SavePath="$ISTORE_DL_DIR/qBittorrent"
-    set qbittorrent.main.TempPathEnabled=1
+    set qbittorrent.main.TempPathEnabled=true
     set qbittorrent.main.TempPath="$ISTORE_CACHE_DIR/qBittorrent"
     set qbittorrent.main.enabled=1
     commit qbittorrent
