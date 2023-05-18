@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 META_TITLE:=Go-WebDAV
 META_DEPENDS:=+gowebdav +luci-i18n-gowebdav-zh-cn +luci-app-gowebdav
 META_DESCRIPTION:=OpenWrt-WebDAV服务端，可为OpenWrt开启WebDav服务。
