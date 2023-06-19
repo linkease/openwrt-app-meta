@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
-PKG_RELEASE:=20221118
+PKG_VERSION:=1.0.2
+PKG_RELEASE:=20230619
 META_TITLE:=Owntone音乐平台
 META_TITLE.en:=Owntone
 META_DEPENDS:=+luci-app-owntone +luci-i18n-owntone-zh-cn +docker-deps
