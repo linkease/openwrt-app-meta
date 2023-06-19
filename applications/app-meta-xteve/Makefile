@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
-PKG_RELEASE:=20221213
+PKG_VERSION:=1.0.2
+PKG_RELEASE:=20230619
 META_TITLE:=Xteve
 META_TITLE.en:=Xteve
 META_DEPENDS:=+luci-app-xteve +luci-i18n-xteve-zh-cn +docker-deps
