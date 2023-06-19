@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
-PKG_RELEASE:=20221117
+PKG_VERSION:=1.0.2
+PKG_RELEASE:=20230619
 META_TITLE:=PhotoPrism相册管理
 META_TITLE.en:=PhotoPrism
 META_DEPENDS:=+luci-app-photoprism +luci-i18n-photoprism-zh-cn +docker-deps
