@@ -46,7 +46,7 @@ define DummyPackage
 endef
 
 # compat for meta
-$(eval $(call DummyPackage,transmission-daemon-openssl,+transmission-daemon,,0.00))
+$(eval $(call DummyPackage,transmission-daemon-openssl,+libmbedtls +transmission-daemon,,0.00))
 $(eval $(call DummyPackage,qBittorrent,+qBittorrent-static,,0.00))
 
 # plugin deps
