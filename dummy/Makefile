@@ -51,6 +51,7 @@ $(eval $(call DummyPackage,qBittorrent,+qBittorrent-static,,0.00))
 
 # plugin deps
 $(eval $(call DummyPackage,docker-deps,+docker,,0.00))
+$(eval $(call DummyPackage,luci-js-deps,+luci-base,,0.00))
 $(eval $(call DummyPackage,serverchan-deps,+iputils-arping +curl +jq,,0.00))
 
 # call BuildPackage - OpenWrt buildroot signature
