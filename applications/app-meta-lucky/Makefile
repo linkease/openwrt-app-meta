@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.10.8
+PKG_VERSION:=2.1.1
 PKG_RELEASE:=1
 META_TITLE:=Lucky
 META_TITLE.en:=Lucky
