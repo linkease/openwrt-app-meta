@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.2.3
+PKG_VERSION:=1.2.5
 PKG_RELEASE:=6
 META_TITLE:=易有云
 META_TITLE.en:=LinkEase
