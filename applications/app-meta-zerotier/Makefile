@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.1.0
+PKG_VERSION:=1.1.1
 PKG_RELEASE:=1
 META_TITLE:=Zerotier
 META_DEPENDS:=+zerotier +luci-app-zerotier +luci-i18n-zerotier-zh-cn
