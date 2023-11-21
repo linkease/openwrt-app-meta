@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=2.4.8
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 META_TITLE:=Lucky
 META_TITLE.en:=Lucky
 META_DEPENDS:=+luci-app-lucky +luci-i18n-lucky-zh-cn +lucky
