@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.3.15
-PKG_RELEASE:=20231124
+PKG_VERSION:=1.3.16
+PKG_RELEASE:=20231201
 META_TITLE:=驿站 - 躺赚收益
 META_DEPENDS:=+owxbyz
 META_DESCRIPTION:=驿站 - 租用闲置设备资源，躺赚积分收益。影视VIP、音乐VIP、话费随心兑换。
