@@ -12,7 +12,7 @@ META_DESCRIPTION.en:=A multi platform system for TaoKe.
 META_AUTHOR:=泡泡
 META_ARCH:=x86_64 aarch64_cortex-a53
 META_TAGS:=system nas
-META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/rebatedog/pages
+META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/rebatedog
 META_WEBSITE:=https://xiyi.ymette.com/
 
 include ../../meta.mk
