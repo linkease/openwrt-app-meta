@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.2
+PKG_VERSION:=1.0.3
 PKG_RELEASE:=1
 META_TITLE:=旺财狗
 META_TITLE.en:=rebatedog
@@ -12,7 +12,7 @@ META_DESCRIPTION.en:=A multi platform system for TaoKe.
 META_AUTHOR:=泡泡
 META_ARCH:=x86_64 aarch64_cortex-a53
 META_TAGS:=system nas
-META_LUCI_ENTRY:=/cgi-bin/luci/admin/rebatedog
+META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/rebatedog/pages
 META_WEBSITE:=https://xiyi.ymette.com/
 
 include ../../meta.mk
