@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.3.7
+PKG_VERSION:=0.3.8
 PKG_RELEASE:=1
 META_TITLE:=KVM虚拟机(WebVirtCloud)
 META_DEPENDS:=+vmease +luci-app-webvirtcloud +luci-i18n-webvirtcloud-zh-cn +docker
