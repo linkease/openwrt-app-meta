@@ -3,12 +3,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.1.8
-PKG_RELEASE:=20230619
+PKG_RELEASE:=20231208
 META_TITLE:=Jellyfin私有影院
 META_TITLE.en:=Jellyfin
 META_DEPENDS:=+luci-app-jellyfin +luci-i18n-jellyfin-zh-cn +docker-deps
-META_DESCRIPTION:=Jellyfin是一个免费自由的媒体系统软件，可以让您方便地管理和串流您的媒体。部分机型无需配置即可支持硬件转码：Easepi ARS2；RK3568 系列。
-META_DESCRIPTION.en:=Jellyfin is the volunteer-built media solution that puts you in control of your media. Some models support hardware transcoding out-of-box: Easepi ARS2; RK3568 series.
+META_DESCRIPTION:=Jellyfin是一个免费自由的媒体系统软件，可以让您方便地管理和串流您的媒体。部分机型无需配置即可支持硬件转码：Easepi ARS2；RK35xx 系列。
+META_DESCRIPTION.en:=Jellyfin is the volunteer-built media solution that puts you in control of your media. Some models support hardware transcoding out-of-box: Easepi ARS2; RK35xx series.
 META_AUTHOR:=Jellyfin/jjm2473
 META_TAGS:=net multimedia
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/jellyfin
