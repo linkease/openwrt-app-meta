@@ -13,7 +13,7 @@ META_AUTHOR:=泡泡
 META_ARCH:=x86_64 aarch64_cortex-a53
 META_TAGS:=system nas
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/rebatedog
-META_WEBSITE:=https://xiyi.ymette.com/
+META_WEBSITE:=https://github.com/zhaoyangguang/rebatedog
 
 include ../../meta.mk
 
