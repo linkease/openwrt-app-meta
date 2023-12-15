@@ -2,14 +2,14 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=3.28.0
+PKG_VERSION:=3.29.1
 PKG_RELEASE:=2
 META_TITLE:=alist网盘
 META_TITLE.en:=Alist Net disk
 META_DEPENDS:=+luci-i18n-alist-zh-cn +alist +luci-app-alist
 META_DESCRIPTION:=一个支持多存储的文件列表程序，提供 WEB 界面和 WebDAV 服务
 META_DESCRIPTION.en:=A file list program that supports multiple storage.
-META_AUTHOR:=alist-org
+META_AUTHOR:=alist-org/sbwml
 META_ARCH:=x86_64 aarch64_cortex-a53
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/nas/alist
