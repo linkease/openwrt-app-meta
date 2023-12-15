@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.5
 PKG_RELEASE:=20231215
-META_TITLE:=SysTools工具集
+META_TITLE:=系统便利工具
 META_TITLE.en:=SysTools
 META_DEPENDS:=+luci-app-systools +luci-i18n-systools-zh-cn
 META_DESCRIPTION:=一些便利的工具集，方便修复一些问题，一键开关 IPv6。
