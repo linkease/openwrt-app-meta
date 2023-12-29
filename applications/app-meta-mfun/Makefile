@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.0.2
+PKG_VERSION:=0.0.5
 PKG_RELEASE:=1
 META_TITLE:=MFUN
 META_DEPENDS:=+luci-app-mfun +luci-i18n-mfun-zh-cn
