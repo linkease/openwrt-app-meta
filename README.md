@@ -26,6 +26,8 @@
 2. `META_DESCRIPTION.en:=` 英文描述
 
 ## 依赖额外的包
+由于 iStore 卸载插件的时候会将`META_DEPENDS`列表里的软件包都卸载，所以不能将其他插件共同依赖的软件包加到列表里。一般情况下，插件的主包就已经依赖需要的软件包了，不用再写到`META_DEPENDS`中。如果某些软件包没被主包依赖，又希望安装，那么参考下面的步骤：
+
 1. 编辑`dummy/Makefile`，添加一行`$(eval $(call DummyPackage,插件名-deps,+额外依赖,,0.00))`，例如`serverchan`添加额外的`+iputils-arping +curl +jq`依赖：
     ```Makefile
     $(eval $(call DummyPackage,serverchan-deps,+iputils-arping +curl +jq,,0.00))
@@ -34,6 +36,7 @@
     ```Makefile
     META_DEPENDS:=+luci-app-serverchan +serverchan-deps
     ```
+
 **注意：如果插件依赖 Docker ，请使用`META_DEPENDS:=+docker-deps`**
 
 # 在线提交流程
