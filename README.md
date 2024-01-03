@@ -34,6 +34,7 @@
     ```Makefile
     META_DEPENDS:=+luci-app-serverchan +serverchan-deps
     ```
+**注意：如果插件依赖 Docker ，请使用`META_DEPENDS:=+docker-deps`**
 
 # 在线提交流程
 
