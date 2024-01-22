@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.0.7
+PKG_VERSION:=0.0.8
 PKG_RELEASE:=1
 META_TITLE:=MFUN
 META_DEPENDS:=+luci-app-mfun +luci-i18n-mfun-zh-cn
@@ -12,7 +12,7 @@ META_AUTHOR:=Carseason
 META_ARCH:=x86_64 aarch64_cortex-a53
 META_TAGS:=nas multimedia
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/mfun
-META_WEBSITE:=https://github.com/Carseason/openwrt-mfun
+META_WEBSITE:=https://www.mfun.cloud
 
 include ../../meta.mk
 
