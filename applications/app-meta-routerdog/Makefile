@@ -2,13 +2,13 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.22.0
+PKG_VERSION:=1.0.0
 PKG_RELEASE:=1
 META_TITLE:=路由狗
 META_TITLE.en:=routerdog
-META_DEPENDS:=+luci-app-routerdog +luci-i18n-routerdog-zh-cn
+META_DEPENDS:=+luci-app-routerdog +luci-i18n-routerdog-zh-cn +routergo
 META_DESCRIPTION:=为iStoreOS提供新界面和APP
-META_DESCRIPTION.en:=To new homepage and app for iStoreOS.
+META_DESCRIPTION.en:=The new homepage and app for iStoreOS.
 META_AUTHOR:=Carseason
 META_ARCH:=x86_64 aarch64_cortex-a53
 META_TAGS:=system nas
