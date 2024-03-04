@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.2
-PKG_RELEASE:=20230215
+PKG_VERSION:=1.0.3
+PKG_RELEASE:=20240113
 META_TITLE:=ChineseSubFinder中文字幕
 META_TITLE.en:=ChineseSubFinder
 META_DEPENDS:=+luci-app-chinesesubfinder +luci-i18n-chinesesubfinder-zh-cn +docker-deps
