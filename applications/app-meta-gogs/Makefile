@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
-PKG_RELEASE:=20221114
+PKG_VERSION:=1.0.3
+PKG_RELEASE:=20240304
 META_TITLE:=Gogs服务
 META_TITLE.en:=Gogs
 META_DEPENDS:=+luci-app-gogs +luci-i18n-gogs-zh-cn +docker-deps
