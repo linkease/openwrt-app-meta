@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.1
-PKG_RELEASE:=20220505
+PKG_VERSION:=1.2
+PKG_RELEASE:=20240119
 META_TITLE:=简单网络管控
 META_TITLE.en:=Web Control
 META_DEPENDS:=+luci-app-timecontrol +luci-app-control-weburl +luci-app-control-webrestriction

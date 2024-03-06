@@ -2,13 +2,13 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.1.1
+PKG_VERSION:=1.2.0
 PKG_RELEASE:=1
-META_TITLE:=Zerotier
+META_TITLE:=ZeroTier
 META_DEPENDS:=+zerotier +luci-app-zerotier +luci-i18n-zerotier-zh-cn
 META_DESCRIPTION:=非常简单易用的内网穿透工具，能实现虚拟局域网的组建。
 META_DESCRIPTION.en:=A smart ethernet switch for earth
-META_AUTHOR:=zerotier
+META_AUTHOR:=ZeroTier
 META_TAGS:=networking service
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/vpn/zerotier
 META_WEBSITE:=https://www.zerotier.com/
