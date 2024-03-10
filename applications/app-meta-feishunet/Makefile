@@ -1,0 +1,20 @@
+# This is free software, licensed under the Apache License, Version 2.0 .
+
+include $(TOPDIR)/rules.mk
+
+PKG_VERSION:=2.2
+PKG_RELEASE:=1
+META_TITLE:=飞鼠p2p组网
+META_TITLE.en:=feishunet
+META_DEPENDS:=
+META_DESCRIPTION:=用于nat打洞,可以直接建立两端无公网端点的直连隧道
+META_DESCRIPTION.en:=Used for NAT drilling, it can directly establish a direct tunnel with no public network endpoints at both ends
+META_AUTHOR:=王斌
+META_ARCH:=x86_64 arm/v8
+META_TAGS:=nas service
+META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/linkease
+META_WEBSITE:=https://www.feishuwg.com/
+
+include ../../meta.mk
+
+# call BuildPackage - OpenWrt buildroot signature
