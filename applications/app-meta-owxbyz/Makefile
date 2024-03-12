@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.3.18
-PKG_RELEASE:=20240306
+PKG_VERSION:=1.3.20
+PKG_RELEASE:=20240312
 META_TITLE:=驿站 - 边缘计算
 META_DEPENDS:=+owxbyz
 META_DESCRIPTION:=驿站 - 租用闲置设备资源，躺赚积分收益。影视VIP、音乐VIP、话费随心兑换。【玩物科技出品】
