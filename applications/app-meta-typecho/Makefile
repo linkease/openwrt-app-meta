@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.2
-PKG_RELEASE:=1.0.2-20240313
+PKG_RELEASE:=20240313
 META_TITLE:=TypeCho博客
 META_TITLE.en:=TypeCho
 META_DEPENDS:=+luci-app-typecho +luci-i18n-typecho-zh-cn +docker-deps
