@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
-PKG_RELEASE:=20240321
+PKG_VERSION:=1.4.0
+PKG_RELEASE:=20240421
 META_TITLE:=移动通信模组
 META_TITLE.en:=Modem
 META_DEPENDS:=+luci-app-modem +luci-i18n-modem-zh-cn +quectel-CM-5G +sms-tool
