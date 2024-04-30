@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=2.0.4.4
+PKG_VERSION:=2.0.4.5
 PKG_RELEASE:=1
 META_TITLE:=迅游
 META_DEPENDS:=+xunyou +luci-app-xunyou +luci-i18n-xunyou-zh-cn
