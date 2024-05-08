@@ -34,9 +34,8 @@ jobs:
           DEBIAN_FRONTEND: noninteractive
         run: |
           sudo swapoff /swapfile || true
-          sudo rm -rf /swapfile /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-          sudo -E apt-get -qq update
-          sudo -E apt-get -qq install build-essential binutils bzip2 gawk git libncurses5-dev libz-dev patch unzip zlib1g-dev libc6-dev-i386 subversion flex gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto upx libelf-dev autoconf automake libtool device-tree-compiler antlr3 gperf rsync
+          sudo rm -rf /swapfile
+          sudo -E apt-get -qq install build-essential git rsync
           sudo -E apt-get -qq autoremove --purge
           sudo -E apt-get -qq clean
           sudo timedatectl set-timezone "$TZ"
@@ -140,10 +139,6 @@ jobs:
           git -C meta count-objects -vH
           git -C meta push --all gitee
           echo "status=success" >> $GITHUB_OUTPUT
-
-      - name: New Pending
-        if: (steps.gitee.outputs.status == 'success' || steps.retry.outputs.status == 'success') && !cancelled() && !inputs.test
-        run: git -C meta push origin HEAD:pending
 
       - name: Notify DB index
         if: (steps.gitee.outputs.status == 'success' || steps.retry.outputs.status == 'success') && !cancelled() && !inputs.test
