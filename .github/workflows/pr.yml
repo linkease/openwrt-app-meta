@@ -45,7 +45,7 @@ jobs:
           [ -d head/.github/workflows ]
           rm -rf base/.github/workflows
           cp -a head/.github/workflows base/.github/
-          if git -C base diff --pretty= --name-only --no-renames | grep -q '^.github/workflows/'; then \
+          if git -C base diff --pretty= --name-only --no-renames | grep '^.github/workflows/'; then \
             echo "Don't HACK my workflows!" >&2; \
             echo "::error title=PR Check failed::Don't touch workflows!"; \
             exit 1; \
