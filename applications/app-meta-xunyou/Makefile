@@ -11,7 +11,7 @@ META_AUTHOR:=xunyou
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/xunyou
 META_WEBSITE:=https://www.xunyou.com/
-META_ARCH:=x86_64 aarch64_cortex-a53
+META_ARCH:=x86_64 aarch64
 
 include ../../meta.mk
 

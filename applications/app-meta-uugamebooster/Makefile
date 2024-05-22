@@ -11,7 +11,7 @@ META_AUTHOR:=网易
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/uuplugin
 META_WEBSITE:=https://uu.163.com/
-META_ARCH:=x86_64 aarch64_cortex-a53
+META_ARCH:=x86_64 aarch64
 
 include ../../meta.mk
 
