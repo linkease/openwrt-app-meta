@@ -116,6 +116,8 @@ jobs:
           RSYNC_PASSWORD: ${{ secrets.RSYNC_PASSWORD }}
           REPO_DEST: ${{ secrets.RSYNC_DEST }}
         run: |
+          rsync --exclude='Packages' --exclude='Packages.*' -a ${SDK_NAME}/bin/packages/aarch64_cortex-a53/compat $REPO_DEST
+          rsync --exclude='Packages' --exclude='Packages.*' -a ${SDK_NAME}/bin/packages/aarch64_cortex-a53/meta $REPO_DEST
           rsync -a --del ${SDK_NAME}/bin/packages/aarch64_cortex-a53/compat $REPO_DEST
           rsync -a --del ${SDK_NAME}/bin/packages/aarch64_cortex-a53/meta $REPO_DEST
           echo "status=success" >> $GITHUB_OUTPUT
