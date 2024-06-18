@@ -1,6 +1,6 @@
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.4
+PKG_VERSION:=1.0.5
 PKG_RELEASE:=1
 META_TITLE:=BeeconMini-自组网
 META_DEPENDS:=+bxplug +luci-app-beeconmini
