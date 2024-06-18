@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.1.10
-PKG_RELEASE:=20240224
+PKG_RELEASE:=20240618
 META_TITLE:=Jellyfin私有影院
 META_TITLE.en:=Jellyfin
 META_DEPENDS:=+luci-app-jellyfin +luci-i18n-jellyfin-zh-cn +docker-deps
@@ -14,6 +14,8 @@ META_TAGS:=net multimedia
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/jellyfin
 META_WEBSITE:=https://jellyfin.org
 META_TUTORIAL:=https://doc.linkease.com/zh/guide/easepi/advanced.html\#玩转影音
+META_AUTOCONF:=path enable
+META_UCI:=jellyfin
 
 include ../../meta.mk
 
