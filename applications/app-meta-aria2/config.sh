@@ -2,10 +2,13 @@
 [ -z "$ISTORE_CONF_DIR" ] && exit 1
 [ -z "$ISTORE_DL_DIR" ] && exit 1
 
+ISTORE_ENABLED=1
+[ -z "$ISTORE_DONT_START" ] || ISTORE_ENABLED=0
+
 uci -q batch <<-EOF >/dev/null || exit 1
     set aria2.main.config_dir="$ISTORE_CONF_DIR/Aria2"
     set aria2.main.dir="$ISTORE_DL_DIR/Aria2"
-    set aria2.main.enabled=1
+    set aria2.main.enabled=$ISTORE_ENABLED
     commit aria2
 EOF
 

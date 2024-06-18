@@ -60,6 +60,8 @@ $(if $(META_TUTORIAL),  "tutorial": "$(META_TUTORIAL)"$(comma))
   "arch": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach arch,$(META_ARCH),"$(arch)"$(comma))))],
   "description": "$(META_ESCAPED_DESCRIPTION)",
 $(if $(META_ESCAPED_DESCRIPTION.en),  "description_en": "$(META_ESCAPED_DESCRIPTION.en)"$(comma))
+$(if $(META_AUTOCONF),  "autoconf": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach conf,$(META_AUTOCONF),"$(conf)"$(comma))))]$(comma))
+$(if $(META_UCI),  "uci": "$(META_UCI)"$(comma))
   "tags": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach tag,$(META_TAGS),"$(tag)"$(comma))))],
   "depends": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach dep,$(META_DEPENDS),"$(subst +,,$(dep))"$(comma))))]
 }

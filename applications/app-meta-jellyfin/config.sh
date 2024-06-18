@@ -9,8 +9,11 @@ uci -q batch <<-EOF >/dev/null || exit 1
     commit jellyfin
 EOF
 
+ISTORE_ACTION=install
+[ -z "$ISTORE_DONT_START" ] || ISTORE_ACTION=stop
+
 if [ -f /usr/libexec/istorec/jellyfin.sh ]; then
-    /usr/libexec/istorec/jellyfin.sh install
+    /usr/libexec/istorec/jellyfin.sh $ISTORE_ACTION
 else
-    /usr/share/jellyfin/install.sh install
+    /usr/share/jellyfin/install.sh $ISTORE_ACTION
 fi

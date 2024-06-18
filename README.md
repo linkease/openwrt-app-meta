@@ -6,6 +6,7 @@
     * `app-meta-*`
         * `Makefile` - 描述文件，参考下文约定
         * `logo.png` - 图标文件，目前只支持png
+        * `config.sh` - [自动配置脚本](#自动配置脚本)
 * `fake-top` - 辅助文件，无需关注
 * `Makefile` - 辅助文件，无需关注
 * `meta.mk` - 辅助文件，无需关注
@@ -21,6 +22,8 @@
 7. `PKG_RELEASE:=` 元数据修正版本，必须是数字，可以使用 `1`，`2`，`3` 或者日期如 `20240314`。在版本号 `PKG_VERSION` 未变更的情况下可以通过提升 `PKG_RELEASE` 来产生更新。
 8. `META_WEBSITE:=` 官网链接（注意如果链接包含#，需要转义成\\#）
 9. `META_TUTORIAL:=` 教程链接（注意如果链接包含#，需要转义成\\#）
+10. `META_AUTOCONF:=` 用来配合[自动配置脚本](#自动配置脚本)，这里填写支持的自动配置参数，如果不支持自动配置请勿包含这一行。如果有多个配置参数用空格隔开，例如`path enable`。目前可能的取值有`path`（配置/数据路径），`enable`（安装完立即启动）
+11. `META_UCI:=` 插件的主要UCI配置文件名，用来检查插件是否已经被手动/自动配置过。填写文件名即可，例如`aria2`
 
 ### 国际化
 1. `META_TITLE.en:=` 英文名称，如果跟`META_TITLE`一样就不用填
@@ -39,6 +42,18 @@
     ```
 
 **注意：如果插件依赖 Docker ，请使用`META_DEPENDS:=+docker-deps`**
+
+## 自动配置脚本
+自动配置插件的脚本，由iStore或其他插件在此插件安装完以后根据用户选择调用。调用时会传入以下环境变量：
+
+| 变量 | 说明 | 必须 |
+| --- | --- | --- |
+| ISTORE_CONF_DIR | 配置文件保存路径，例如`/mnt/nvme/Config` | 是 |
+| ISTORE_CACHE_DIR | 缓存/临时文件保存路径，例如`/mnt/nvme/Cache` | 是 |
+| ISTORE_DL_DIR | 下载文件保存路径，例如`/mnt/nvme/Download` | 是 |
+| ISTORE_PUBLIC_DIR | 公共文件夹，例如`/mnt/nvme/Public` | 是 |
+| ISTORE_DONT_START | 自动配置以后不启用插件，取值1或空 | 否 |
+
 
 # 在线提交流程
 
