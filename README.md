@@ -48,10 +48,10 @@
 
 | 变量 | 说明 | 必须 |
 | --- | --- | --- |
-| ISTORE_CONF_DIR | 配置文件保存路径，例如`/mnt/nvme/Config` | 是 |
-| ISTORE_CACHE_DIR | 缓存/临时文件保存路径，例如`/mnt/nvme/Cache` | 是 |
-| ISTORE_DL_DIR | 下载文件保存路径，例如`/mnt/nvme/Download` | 是 |
+| ISTORE_CONF_DIR | 配置文件保存路径，例如`/mnt/nvme/Configs` | 是 |
+| ISTORE_CACHE_DIR | 缓存/临时文件保存路径，例如`/mnt/nvme/Caches` | 是 |
 | ISTORE_PUBLIC_DIR | 公共文件夹，例如`/mnt/nvme/Public` | 是 |
+| ISTORE_DL_DIR | 下载文件保存路径，例如`/mnt/nvme/Public/Downloads` | 是 |
 | ISTORE_DONT_START | 自动配置以后不启用插件，取值1或空 | 否 |
 
 
