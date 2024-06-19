@@ -1,0 +1,19 @@
+name: Sync Server Data
+
+on:
+  workflow_dispatch:
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    name: Sync Server Data
+    steps:
+      - name: Notify DB index
+        env:
+          DB_WEBHOOK_X_TOKEN: ${{ secrets.DB_WEBHOOK_X_TOKEN }}
+          DB_WEBHOOK_URL: ${{ secrets.DB_WEBHOOK_URL }}
+        run: |
+          curl -H "x-token: ${DB_WEBHOOK_X_TOKEN}" -XPOST ${DB_WEBHOOK_URL}
