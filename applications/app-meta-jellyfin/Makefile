@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.1.10
-PKG_RELEASE:=20240618
+PKG_RELEASE:=20240620
 META_TITLE:=Jellyfin私有影院
 META_TITLE.en:=Jellyfin
 META_DEPENDS:=+luci-app-jellyfin +luci-i18n-jellyfin-zh-cn +docker-deps
