@@ -68,7 +68,7 @@ $(if $(META_UCI),  "uci": "$(META_UCI)"$(comma))
 endef
 
 define Package/$(PKG_NAME)/install
-	$(INSTALL_DIR) $(1)/usr/lib/opkg/meta $(1)/usr/libexec/istorea $(1)/www/luci-static/resources/app-icons
+	$(INSTALL_DIR) $(1)/usr/lib/opkg/meta $(1)/usr/libexec/istorea $(1)/usr/libexec/istoree $(1)/www/luci-static/resources/app-icons
 	if [ -d ./root ]; then \
 	  cp -pR ./root/* $(1)/; \
 	else true; fi
@@ -77,6 +77,9 @@ define Package/$(PKG_NAME)/install
 	fi;
 	if [ -f ./config.sh ]; then \
 		$(INSTALL_BIN) ./config.sh $(1)/usr/libexec/istorea/$(META_BASENAME).sh ; \
+	fi;
+	if [ -f ./entry.sh ]; then \
+		$(INSTALL_BIN) ./entry.sh $(1)/usr/libexec/istoree/$(META_BASENAME).sh ; \
 	fi;
 	echo "$(call escape_json,$(call Package/$(PKG_NAME)/JsonInfo))" > $(1)/usr/lib/opkg/meta/$(META_BASENAME).json
 endef
