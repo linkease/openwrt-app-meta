@@ -19,7 +19,9 @@ status(){
     if /etc/init.d/aria2 running >/dev/null; then
         json_add_boolean "running" "1"
         parse_aria2_config >/dev/null
-        json_add_string "url" "http://127.0.0.1:$rpc_listen_port/jsonrpc"
+        json_add_string "rpcProtocol" http
+        json_add_int "rpcPort" $rpc_listen_port
+        json_add_string "web" "/ariang"
         json_add_object "auth"
         json_add_string "method" "$rpc_auth_method"
         [ -n "$rpc_secret" ] && json_add_string "token" "$rpc_secret"

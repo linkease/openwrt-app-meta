@@ -13,7 +13,8 @@ status(){
     if [ "$status" = "running" ]; then
         json_add_boolean "running" "1"
         port=`$ISTOREC_SCRIPT port`
-        json_add_string "url" "http://127.0.0.1:${port:-8096}/"
+        json_add_string "web" ":${port:-8096}"
+        json_add_string "protocol" http
     else
         json_add_boolean "running" "0"
         if [ -z "$status" ]; then
