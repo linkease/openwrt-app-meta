@@ -14,6 +14,8 @@ META_TAGS:=net multimedia
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/lanraragi
 META_WEBSITE:=https://lrr.tvc-16.science/
 META_TUTORIAL:=
+META_AUTOCONF:=path
+META_UCI:=lanraragi
 
 include ../../meta.mk
 

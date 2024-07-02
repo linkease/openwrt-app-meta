@@ -14,6 +14,8 @@ META_TAGS:=net multimedia
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/navidrome
 META_WEBSITE:=https://github.com/navidrome/navidrome
 META_TUTORIAL:=
+META_AUTOCONF:=path
+META_UCI:=navidrome
 
 include ../../meta.mk
 

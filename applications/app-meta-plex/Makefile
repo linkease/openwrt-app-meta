@@ -14,6 +14,8 @@ META_TAGS:=net multimedia
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/plex
 META_WEBSITE:=https://www.plex.tv/
 META_TUTORIAL:=
+META_AUTOCONF:=path
+META_UCI:=plex
 
 include ../../meta.mk
 
