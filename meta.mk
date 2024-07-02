@@ -7,6 +7,7 @@
 META_NAME?=$(notdir ${CURDIR})
 META_BASENAME?=$(patsubst app-meta-%,%,$(META_NAME))
 META_ARCH?=all
+META_AUTOCONF:=$(META_AUTOCONF)$(if $(realpath entry.sh), entrysh)
 
 PKG_NAME?=$(META_NAME)
 PKG_RELEASE?=1

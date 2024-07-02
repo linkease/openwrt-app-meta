@@ -54,5 +54,6 @@ $(eval $(call DummyPackage,docker-deps,+docker,,0.00))
 $(eval $(call DummyPackage,luci-js-deps,+luci-base,,0.00))
 $(eval $(call DummyPackage,serverchan-deps,+iputils-arping +curl +jq,,0.00))
 $(eval $(call DummyPackage,mwan3-deps,+luci-i18n-mwan3-zh-cn +luci-app-mwan3 +mwan3,,0.00))
+$(eval $(call DummyPackage,aria2-entry-deps,+coreutils-base64,,0.00))
 
 # call BuildPackage - OpenWrt buildroot signature

@@ -3,10 +3,10 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.0
-PKG_RELEASE:=4
+PKG_RELEASE:=5
 META_TITLE:=Aria2下载器
 META_TITLE.en:=Aria2
-META_DEPENDS:=+aria2 +ariang +luci-app-aria2 +luci-i18n-aria2-zh-cn
+META_DEPENDS:=+aria2 +ariang +luci-app-aria2 +luci-i18n-aria2-zh-cn +aria2-entry-deps
 META_DESCRIPTION:=Aria2是一款自由、跨平台命令行界面的下载管理器
 META_DESCRIPTION.en:=Aria2 is a lightweight multi-protocol & multi-source command-line download utility.
 META_AUTHOR:=Tatsuhiro Tsujikawa

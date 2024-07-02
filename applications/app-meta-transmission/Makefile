@@ -13,6 +13,8 @@ META_TAGS:=download tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/transmission
 META_WEBSITE:=https://transmissionbt.com/
 META_TUTORIAL:=https://doc.linkease.com/zh/guide/easepi/common.html\#transmission下载
+META_AUTOCONF:=path
+META_UCI:=transmission
 
 include ../../meta.mk
 
