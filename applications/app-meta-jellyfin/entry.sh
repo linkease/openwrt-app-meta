@@ -11,13 +11,15 @@ status(){
     json_add_string "app" "jellyfin"
     json_add_boolean "docker" "1"
 
-    status=`$ISTOREC_SCRIPT status 2>/dev/null`
+    local status=`$ISTOREC_SCRIPT status 2>/dev/null`
     if [ "$status" = "running" ]; then
         json_add_boolean "running" "1"
-        port=`$ISTOREC_SCRIPT port`
-        json_add_string "web" "http://$host:${port:-8096}/"
+        local port=`$ISTOREC_SCRIPT port`
+        local portsec=${port:-8096}
+        json_add_string "web" ":${portsec}"
+        json_add_string "href" "http://$host:${portsec}/"
         json_add_string "protocol" http
-        json_add_string "port" ${port:-8096}
+        json_add_string "port" ${portsec}
     else
         json_add_boolean "running" "0"
         if [ -z "$status" ]; then

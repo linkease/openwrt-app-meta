@@ -23,12 +23,13 @@ status(){
         parse_aria2_config >/dev/null
         json_add_string "rpcProtocol" http
         json_add_int "rpcPort" $rpc_listen_port
+        json_add_string "web" "/ariang"
         local ariang_arg="#!/settings/rpc/set/http/$host/6800/jsonrpc"
         [ -n "$rpc_secret" ] && {
             local secret_b64=$(echo -n "$rpc_secret" | base64 | sed -e 's/=//g' -e 's/+/-/g' -e 's#/#_#g')
             ariang_arg="$ariang_arg/$secret_b64"
         }
-        json_add_string "web" "/ariang/$ariang_arg"
+        json_add_string "href" "/ariang/$ariang_arg"
         json_add_object "auth"
         json_add_string "method" "$rpc_auth_method"
         [ -n "$rpc_secret" ] && json_add_string "token" "$rpc_secret"
