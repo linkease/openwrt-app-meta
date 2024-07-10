@@ -7,7 +7,7 @@
 META_NAME?=$(notdir ${CURDIR})
 META_BASENAME?=$(patsubst app-meta-%,%,$(META_NAME))
 META_ARCH?=all
-META_AUTOCONF:=$(META_AUTOCONF)$(if $(realpath entry.sh), entrysh)
+META_FLAGS:=$(if $(realpath entry.sh), entrysh)
 
 PKG_NAME?=$(META_NAME)
 PKG_RELEASE?=1
@@ -63,6 +63,7 @@ $(if $(META_TUTORIAL),  "tutorial": "$(META_TUTORIAL)"$(comma))
 $(if $(META_ESCAPED_DESCRIPTION.en),  "description_en": "$(META_ESCAPED_DESCRIPTION.en)"$(comma))
 $(if $(META_AUTOCONF),  "autoconf": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach conf,$(META_AUTOCONF),"$(conf)"$(comma))))]$(comma))
 $(if $(META_UCI),  "uci": "$(META_UCI)"$(comma))
+$(if $(META_FLAGS),  "flags": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach flag,$(META_FLAGS),"$(flag)"$(comma))))]$(comma))
   "tags": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach tag,$(META_TAGS),"$(tag)"$(comma))))],
   "depends": [$(patsubst %$(comma),%,$(subst $(space),,$(foreach dep,$(META_DEPENDS),"$(subst +,,$(dep))"$(comma))))]
 }
