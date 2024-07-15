@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.4.4
-PKG_RELEASE:=2
+PKG_VERSION:=1.4.9
+PKG_RELEASE:=1
 META_TITLE:=路由狗
 META_TITLE.en:=routerdog
 META_DEPENDS:=+luci-app-routerdog +luci-i18n-routerdog-zh-cn +routergo
