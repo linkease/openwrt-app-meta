@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.4.9
+PKG_VERSION:=1.4.10
 PKG_RELEASE:=1
 META_TITLE:=路由狗
 META_TITLE.en:=routerdog
