@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=3.33.0
+PKG_VERSION:=3.37.4
 PKG_RELEASE:=1
 META_TITLE:=alist网盘
 META_TITLE.en:=Alist Net disk
