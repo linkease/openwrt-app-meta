@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# fix ca_certificate
+uci -q get aria2.main.ca_certificate >/dev/null && exit 0
+
+uci -q batch <<-EOF >/dev/null
+	set aria2.main.ca_certificate=/etc/ssl/certs/ca-certificates.crt
+	commit aria2
+EOF
+
+exit 0
