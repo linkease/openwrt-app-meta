@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=beta
-PKG_RELEASE:=1
+PKG_VERSION:=1.0.0-beta.5
+PKG_RELEASE:=1.0.0-beta.5
 META_TITLE:=Arcadia 一站式代码运维平台
 META_TITLE.en:=Arcadia one-stop code operation and maintenance platform
 META_DEPENDS:=+luci-app-arcadia +luci-i18n-arcadia-zh-cn +docker-deps
