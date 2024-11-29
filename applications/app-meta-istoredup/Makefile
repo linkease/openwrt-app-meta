@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.1.3
+PKG_VERSION:=1.1.5
 PKG_RELEASE:=1
 META_TITLE:=iStore分身(iStoreDup)
 META_DEPENDS:=+vmease +luci-app-istoredup +luci-i18n-istoredup-zh-cn +docker-deps
