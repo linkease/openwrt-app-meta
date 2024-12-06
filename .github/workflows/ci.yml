@@ -148,8 +148,9 @@ jobs:
         env:
           DB_WEBHOOK_X_TOKEN: ${{ secrets.DB_WEBHOOK_X_TOKEN }}
           DB_WEBHOOK_URL: ${{ secrets.DB_WEBHOOK_URL }}
+          DB_WEBHOOK_FLAGS: ${{ secrets.DB_WEBHOOK_FLAGS }}
         run: |
-          curl -H "x-token: ${DB_WEBHOOK_X_TOKEN}" -XPOST ${DB_WEBHOOK_URL}
+          curl -H "x-token: ${DB_WEBHOOK_X_TOKEN}" -XPOST ${DB_WEBHOOK_URL} ${DB_WEBHOOK_FLAGS} 
 
       - name: Upload test ipks
         uses: actions/upload-artifact@main
