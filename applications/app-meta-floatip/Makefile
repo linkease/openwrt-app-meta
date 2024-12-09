@@ -12,7 +12,7 @@ META_DESCRIPTION.en:=FloatingGateway allows two gateway within one lan which can
 META_AUTHOR:=jjm2473
 META_TAGS:=system tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/floatip
-META_WEBSITE:=https://doc.linkease.com/zh/guide/istoreos/software/floatip.html
+META_WEBSITE:=https://github.com/linkease/nas-packages
 META_TUTORIAL:=https://doc.linkease.com/zh/guide/istoreos/software/floatip.html
 
 include ../../meta.mk
