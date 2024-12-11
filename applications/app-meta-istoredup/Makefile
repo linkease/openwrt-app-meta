@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.1.5
+PKG_VERSION:=1.1.6
 PKG_RELEASE:=1
 META_TITLE:=iStore分身(iStoreDup)
 META_DEPENDS:=+vmease +luci-app-istoredup +luci-i18n-istoredup-zh-cn +docker-deps
@@ -12,6 +12,7 @@ META_AUTHOR:=xiaobao
 META_TAGS:=system
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/istoredup
 META_WEBSITE:=https://www.istoreos.com
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istoreos/software/istoredup.html
 
 include ../../meta.mk
 
