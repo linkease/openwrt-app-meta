@@ -2,14 +2,14 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.6
+PKG_VERSION:=1.0.7
 PKG_RELEASE:=20241216
 META_TITLE:=Ubuntu
 META_DEPENDS:=+luci-app-ubuntu2 +luci-i18n-ubuntu-zh-cn +docker-deps
 META_DESCRIPTION:=带Web远程桌面的Docker版Ubuntu，纯英文系统，欢迎各位极客玩家享用。 
 META_AUTHOR:=xiaobao
 META_TAGS:=system tool
-META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/ubuntu
+META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/ubuntu2
 META_WEBSITE:=https://www.kasmweb.com
 META_TUTORIAL:=https://doc.linkease.com/zh/guide/easepi/advanced.html\#ubuntu
 
