@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.7
+PKG_VERSION:=1.0.8
 PKG_RELEASE:=20241216
 META_TITLE:=Ubuntu
 META_DEPENDS:=+luci-app-ubuntu2 +luci-i18n-ubuntu-zh-cn +docker-deps
@@ -12,6 +12,7 @@ META_TAGS:=system tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/ubuntu2
 META_WEBSITE:=https://www.kasmweb.com
 META_TUTORIAL:=https://doc.linkease.com/zh/guide/easepi/advanced.html\#ubuntu
+META_AUTOCONF:=path enable
 
 include ../../meta.mk
 
