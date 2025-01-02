@@ -9,7 +9,7 @@ META_DESCRIPTION:=BeeconMini开发的一款可以在X86/ARM路由里管理自组
 META_AUTHOR:=BeeconMini
 META_TAGS:=net networking
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/beeconmini
-META_WEBSITE:=http://www.beeconx.com.cn/
+META_WEBSITE:=https://mall.jd.com/index-16323664.html
 META_TUTORIAL:=
 
 include ../../meta.mk
