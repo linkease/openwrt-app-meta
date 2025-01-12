@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=20230121
+PKG_VERSION:=20250112
 PKG_RELEASE:=1
 META_TITLE:=msd_lite
 META_DEPENDS:=+luci-app-msd_lite +msd_lite
