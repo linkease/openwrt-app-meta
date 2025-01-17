@@ -13,7 +13,7 @@ META_AUTHOR:=Coder Technologies
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/codeserver
 META_WEBSITE:=https://coder.com/
-META_TUTORIAL:=
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/codeserver.html
 
 include ../../meta.mk
 

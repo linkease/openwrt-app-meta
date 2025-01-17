@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=0.1.7
-PKG_RELEASE:=3
+PKG_RELEASE:=4
 META_TITLE:=iStore增强
 META_TITLE.en:=iStoreEnhance
 META_DEPENDS:=+istoreenhance +luci-app-istoreenhance +luci-i18n-istoreenhance-zh-cn
@@ -14,6 +14,7 @@ META_ARCH:=x86_64 aarch64
 META_TAGS:=nas service
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/istoreenhance
 META_WEBSITE:=https://www.istoreos.com/
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istoreos/software/istoreenhance.html
 
 include ../../meta.mk
 

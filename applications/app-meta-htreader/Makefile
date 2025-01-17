@@ -13,7 +13,7 @@ META_AUTHOR:=hectorqin
 META_TAGS:=net
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/htreader
 META_WEBSITE:=https://github.com/hectorqin/reader
-META_TUTORIAL:=
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/htreader.html
 
 include ../../meta.mk
 

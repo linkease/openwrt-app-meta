@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=8.3.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 META_TITLE:=Proxmox虚拟机(PVE)
 META_DEPENDS:=+vmease +luci-app-pve +luci-i18n-pve-zh-cn +docker-deps
 META_DESCRIPTION:=运行在 iStoreOS 上面的 Proxmox(PVE) 虚拟机平台。
@@ -15,6 +15,7 @@ META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/pve
 META_WEBSITE:=https://pve.proxmox.com/
 META_AUTOCONF:=path enable
 META_UCI:=pve
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istoreos/software/pve.html
 
 include ../../meta.mk
 

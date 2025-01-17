@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.6
-PKG_RELEASE:=20240718
+PKG_RELEASE:=20250116
 META_TITLE:=1Panel
 META_TITLE.en:=1Panel
 META_DEPENDS:=+luci-app-istorepanel +luci-i18n-istorepanel-zh-cn +docker-deps
@@ -13,7 +13,7 @@ META_AUTHOR:=FIT2CLOUD
 META_TAGS:=net
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/istorepanel
 META_WEBSITE:=https://1panel.cn/index.html
-META_TUTORIAL:=
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istoreos/software/istorepanel.html
 
 include ../../meta.mk
 
