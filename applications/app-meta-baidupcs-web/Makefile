@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=3.7.4
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 META_TITLE:=BaiduPCS-Web
 META_DEPENDS:=+baidupcs-web +luci-app-baidupcs-web
 META_DESCRIPTION:=基于BaiduPCS-Go, 可以让你高效的使用百度云。
@@ -12,6 +12,7 @@ META_ARCH:=x86_64 aarch64
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/nas/baidupcs-web
 META_WEBSITE:=https://github.com/Erope/BaiduPCS-Go
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/aliyunwebdav.html
 
 include ../../meta.mk
 

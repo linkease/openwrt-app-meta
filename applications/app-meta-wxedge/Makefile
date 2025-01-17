@@ -11,6 +11,7 @@ META_AUTHOR:=网心云
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/wxedge
 META_WEBSITE:=https://www.onethingcloud.com/
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/wxedge.html
 
 include ../../meta.mk
 
