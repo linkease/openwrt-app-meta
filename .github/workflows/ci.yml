@@ -43,7 +43,9 @@ jobs:
           path: |
             meta/.git
             cache
-          key: meta-build-cache-v1
+          key: meta-build-cache-v1-${{ github.run_id }}
+          restore-keys: |
+            meta-build-cache-v1-
           enableCrossOsArchive: true
 
       - name: Checkout
@@ -110,24 +112,12 @@ jobs:
           ./scripts/feeds install -a -p compat -d y
           ./scripts/feeds install -a -p meta -d y
 
-      - name: Use build_dir cache
-        run: |
-          [ -s cache/build_dir.tar ] && ( cd ${SDK_NAME}/build_dir/target-* ; tar -xf ${{ github.workspace }}/cache/build_dir.tar; ) || true
-
       - name: Compile Meta
         id: compile
         run: |
-          [ -d cache/pacakges ] || mkdir -p cache/pacakges
-          mkdir ${SDK_NAME}/bin
-          ln -s `pwd`/cache/pacakges ${SDK_NAME}/bin/pacakges
           cd ${SDK_NAME}
           bash -c 'set -o pipefail ; make -j1 V=s defconfig package/{compile,index} 2>&1 | tee /tmp/openwrt-sdk-build.log'
           echo "status=success" >> $GITHUB_OUTPUT
-
-      - name: Prepare build_dir cache
-        run: |
-          cd ${SDK_NAME}/build_dir/target-*
-          ls | grep -v '^linux-' | grep -v '^toolchain$' | xargs tar -cf ${{ github.workspace }}/cache/build_dir.tar
 
       - name: Last fail log
         if: failure()
