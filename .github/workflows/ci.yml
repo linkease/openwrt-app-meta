@@ -23,12 +23,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Build Meta
     steps:
-      - name: Checkout
-        uses: actions/checkout@main
-        with:
-          path: 'meta'
-          fetch-depth: 5
-
       - name: Initialization environment
         env:
           DEBIAN_FRONTEND: noninteractive
@@ -41,6 +35,21 @@ jobs:
           sudo ln -s /usr/bin/python3 /usr/bin/python3.10 || true
           sudo timedatectl set-timezone "$TZ"
           # curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
+
+      - name: 'Restore BUILD from cache'
+        id: build-cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            meta/.git
+            cache
+          key: meta-build-cache-v1
+          enableCrossOsArchive: true
+
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          path: 'meta'
 
       - name: 'Restore SDK from cache'
         id: sdk-cache
@@ -95,6 +104,8 @@ jobs:
 
       - name: Update feeds
         run: |
+          [ -d cache/feeds ] || mkdir -p cache/feeds
+          ln -s `pwd`/cache/feeds ${SDK_NAME}/feeds
           cd ${SDK_NAME} && ./scripts/feeds update compat meta
           ./scripts/feeds install -a -p compat -d y
           ./scripts/feeds install -a -p meta -d y
@@ -102,6 +113,9 @@ jobs:
       - name: Compile Meta
         id: compile
         run: |
+          [ -d cache/pacakges ] || mkdir -p cache/pacakges
+          mkdir ${SDK_NAME}/bin
+          ln -s `pwd`/cache/pacakges ${SDK_NAME}/bin/pacakges
           cd ${SDK_NAME}
           bash -c 'set -o pipefail ; make -j1 V=s defconfig package/{compile,index} 2>&1 | tee /tmp/openwrt-sdk-build.log'
           echo "status=success" >> $GITHUB_OUTPUT
