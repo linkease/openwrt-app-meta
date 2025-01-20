@@ -36,16 +36,16 @@ jobs:
           sudo timedatectl set-timezone "$TZ"
           # curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
 
-      - name: 'Restore BUILD from cache'
+      - name: 'Restore state from cache'
         id: build-cache
         uses: actions/cache@v3
         with:
           path: |
             meta/.git
             cache
-          key: meta-build-cache-v1-${{ github.run_id }}
+          key: meta-build-cache-v1-${{ github.ref_name }}-${{ github.run_id }}
           restore-keys: |
-            meta-build-cache-v1-
+            meta-build-cache-v1-${{ github.ref_name }}-
           enableCrossOsArchive: true
 
       - name: Checkout
