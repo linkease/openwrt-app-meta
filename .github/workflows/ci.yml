@@ -143,21 +143,16 @@ jobs:
           PUSH_TARGET: ${{ secrets.PUSH_TARGET_PREFIX }}/linkease/openwrt-app-meta.git
         run: |
           git -C meta remote add gitee "$PUSH_TARGET"
-          git -C meta push --all gitee
-          echo "status=success" >> $GITHUB_OUTPUT
-
-      - name: Retry Unshallow
-        id: retry
-        if: failure() && !cancelled() && steps.upload.outputs.status == 'success' && !inputs.test
-        run: |
-          git -C meta fetch --unshallow origin || exit 1 
-          git -C meta gc
-          git -C meta count-objects -vH
-          git -C meta push --all gitee
+          git -C meta push --all gitee || {
+            git -C meta fetch --unshallow origin || exit 1 
+            git -C meta gc
+            git -C meta count-objects -vH
+            git -C meta push --all gitee
+          }
           echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Notify DB index
-        if: (steps.gitee.outputs.status == 'success' || steps.retry.outputs.status == 'success') && !cancelled() && !inputs.test
+        if: steps.gitee.outputs.status == 'success' && !cancelled() && !inputs.test
         env:
           DB_WEBHOOK_X_TOKEN: ${{ secrets.DB_WEBHOOK_X_TOKEN }}
           DB_WEBHOOK_URL: ${{ secrets.DB_WEBHOOK_URL }}
