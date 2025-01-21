@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       test:
-        description: 'Just test build, skip push2'
+        description: 'Just test build, skip push3'
         required: false 
         type: boolean
   push:
