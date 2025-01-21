@@ -11,6 +11,7 @@ META_AUTHOR:=Rclone Contributors/ElonH
 META_TAGS:=service tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/nas/rclone
 META_WEBSITE:=https://rclone.org/
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/rclone.html
 
 include ../../meta.mk
 

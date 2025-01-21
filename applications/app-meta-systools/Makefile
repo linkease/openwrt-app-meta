@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.8
-PKG_RELEASE:=20241207
+PKG_RELEASE:=20250108
 META_TITLE:=系统便利工具
 META_TITLE.en:=SysTools
 META_DEPENDS:=+luci-app-systools +luci-i18n-systools-zh-cn

@@ -12,6 +12,7 @@ META_AUTHOR:=mikebrady
 META_TAGS:=net multimedia
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/airplay2
 META_WEBSITE:=https://github.com/mikebrady/shairport-sync
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/airplay2.html
 
 include ../../meta.mk
 

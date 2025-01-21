@@ -14,6 +14,7 @@ META_ARCH:=x86_64 aarch64
 META_TAGS:=nas service
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/linkease
 META_WEBSITE:=https://www.linkease.com/
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/linkease.html
 
 include ../../meta.mk
 

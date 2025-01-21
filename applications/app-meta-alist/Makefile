@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=3.40.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 META_TITLE:=alist网盘
 META_TITLE.en:=Alist Net disk
 META_DEPENDS:=+luci-i18n-alist-zh-cn +alist +luci-app-alist
@@ -14,6 +14,7 @@ META_ARCH:=x86_64 aarch64
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/nas/alist
 META_WEBSITE:=https://github.com/alist-org/alist
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/alist.html
 
 include ../../meta.mk
 

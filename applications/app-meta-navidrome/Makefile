@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.0
-PKG_RELEASE:=20221114
+PKG_RELEASE:=20250117
 META_TITLE:=Navidrome音乐
 META_TITLE.en:=Navidrome
 META_DEPENDS:=+luci-app-navidrome +luci-i18n-navidrome-zh-cn +docker-deps
@@ -16,6 +16,7 @@ META_WEBSITE:=https://github.com/navidrome/navidrome
 META_TUTORIAL:=
 META_AUTOCONF:=path
 META_UCI:=navidrome
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/navidrome.html
 
 include ../../meta.mk
 

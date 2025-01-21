@@ -12,7 +12,7 @@ META_AUTHOR:=xiaobao
 META_TAGS:=system tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/ubuntu2
 META_WEBSITE:=https://www.kasmweb.com
-META_TUTORIAL:=https://doc.linkease.com/zh/guide/easepi/advanced.html\#ubuntu
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/ubuntu2.html
 META_AUTOCONF:=path enable
 META_UCI:=ubuntu2
 

@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=4.5.2
-PKG_RELEASE:=4
+PKG_RELEASE:=5
 META_TITLE:=qBittorrent下载器
 META_TITLE.en:=qBittorrent
 META_DEPENDS:=+qBittorrent-static +luci-app-qbittorrent +luci-i18n-qbittorrent-zh-cn
@@ -14,7 +14,7 @@ META_ARCH:=x86_64 aarch64
 META_TAGS:=download tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/nas/qBittorrent
 META_WEBSITE:=https://www.qbittorrent.org/
-META_TUTORIAL:=https://doc.linkease.com/zh/guide/easepi/common.html\#qbittorrent下载
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/qBittorrent.html
 META_AUTOCONF:=path
 META_UCI:=qbittorrent
 
