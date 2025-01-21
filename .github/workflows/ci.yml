@@ -23,12 +23,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Build Meta
     steps:
-      - name: Checkout
-        uses: actions/checkout@main
-        with:
-          path: 'meta'
-          fetch-depth: 5
-
       - name: Initialization environment
         env:
           DEBIAN_FRONTEND: noninteractive
@@ -41,6 +35,23 @@ jobs:
           sudo ln -s /usr/bin/python3 /usr/bin/python3.10 || true
           sudo timedatectl set-timezone "$TZ"
           # curl -fsSL https://raw.githubusercontent.com/P3TERX/dotfiles/master/.bashrc >> ~/.bashrc
+
+      - name: 'Restore state from cache'
+        id: build-cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            meta/.git
+            cache
+          key: meta-build-cache-v1-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            meta-build-cache-v1-${{ github.ref_name }}-
+          enableCrossOsArchive: true
+
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          path: 'meta'
 
       - name: 'Restore SDK from cache'
         id: sdk-cache
@@ -95,6 +106,8 @@ jobs:
 
       - name: Update feeds
         run: |
+          [ -d cache/feeds ] || mkdir -p cache/feeds
+          ln -s `pwd`/cache/feeds ${SDK_NAME}/feeds
           cd ${SDK_NAME} && ./scripts/feeds update compat meta
           ./scripts/feeds install -a -p compat -d y
           ./scripts/feeds install -a -p meta -d y
