@@ -2,10 +2,10 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=20230121
+PKG_VERSION:=20250112
 PKG_RELEASE:=1
 META_TITLE:=msd_lite
-META_DEPENDS:=+luci-app-msd_lite +msd_lite
+META_DEPENDS:=+msd_lite +luci-app-msd_lite +luci-i18n-msd_lite-zh-cn
 META_DESCRIPTION:=Multi Stream daemon (msd) 程序的轻量级版本，用于通过HTTP管理网络上的IPTV流
 META_DESCRIPTION.en:=Multicast UDP to HTTP proxy
 META_AUTHOR:=lancs
