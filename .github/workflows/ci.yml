@@ -52,6 +52,7 @@ jobs:
         uses: actions/checkout@main
         with:
           path: 'meta'
+          fetch-depth: 5
 
       - name: 'Restore SDK from cache'
         id: sdk-cache
