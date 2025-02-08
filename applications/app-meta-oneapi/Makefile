@@ -2,11 +2,11 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
+PKG_VERSION:=1.0.1
 PKG_RELEASE:=20250208
 META_TITLE:=OneAPI
 META_TITLE.en:=OneAPI
-META_DEPENDS:=+luci-app-excalidraw +luci-i18n-excalidraw-zh-cn +docker-deps
+META_DEPENDS:=+luci-app-oneapi +luci-i18n-oneapi-zh-cn +docker-deps
 META_DESCRIPTION:=OneAPI 是LLM API 管理 & 分发系统，支持 OpenAI、Azure、Anthropic Claude、Google Gemini、DeepSeek。
 META_DESCRIPTION.en:=OneAPI is LLM API Management & Distribution System, supporting OpenAI, Azure, Anthropic Claude, Google Gemini, and DeepSeek.
 META_AUTHOR:=songquanpeng
