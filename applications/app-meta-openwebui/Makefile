@@ -2,11 +2,11 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.1
+PKG_VERSION:=1.0.2
 PKG_RELEASE:=20250208
 META_TITLE:=OpenWebUI
 META_TITLE.en:=OpenWebUI
-META_DEPENDS:=+luci-app-excalidraw +luci-i18n-excalidraw-zh-cn +docker-deps
+META_DEPENDS:=+luci-app-openwebui +luci-i18n-openwebui-zh-cn +docker-deps
 META_DESCRIPTION:=Open WebUI 是一款可扩展、自托管的 AI 界面，能够无缝适配您的工作流程，且所有操作均可完全离线运行。
 META_DESCRIPTION.en:=Open WebUI is an extensible, self-hosted AI interface that adapts to your workflow, all while operating entirely offline.
 META_AUTHOR:=open-webui
