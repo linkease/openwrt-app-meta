@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
+PKG_VERSION:=1.0.1
 PKG_RELEASE:=20250208
 META_TITLE:=OpenWebUI
 META_TITLE.en:=OpenWebUI
@@ -11,7 +11,7 @@ META_DESCRIPTION:=Open WebUI 是一款可扩展、自托管的 AI 界面，能�
 META_DESCRIPTION.en:=Open WebUI is an extensible, self-hosted AI interface that adapts to your workflow, all while operating entirely offline.
 META_AUTHOR:=open-webui
 META_TAGS:=net ai
-META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/oneapi
+META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/openwebui
 META_WEBSITE:=https://openwebui.com/
 META_TUTORIAL:=https://doc.linkease.com/zh/guide/istoreos/software/openwebui.html
 META_AUTOCONF:=path enable
