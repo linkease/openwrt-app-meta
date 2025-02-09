@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 META_TITLE:=immich相册
 META_TITLE.en:=immich
@@ -14,7 +14,7 @@ META_AUTHOR:=open-webui
 META_TAGS:=ai multimedia
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/immich
 META_WEBSITE:=https://www.immich.app
-META_TUTORIAL:=https://doc.linkease.com/zh/guide/istoreos/software/immich.html
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/immich.html
 
 include ../../meta.mk
 

@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.2
-PKG_RELEASE:=20250208
+PKG_VERSION:=1.0.8
+PKG_RELEASE:=20250207
 META_TITLE:=OpenWebUI
 META_TITLE.en:=OpenWebUI
 META_DEPENDS:=+luci-app-openwebui +luci-i18n-openwebui-zh-cn +docker-deps
@@ -13,7 +13,7 @@ META_AUTHOR:=open-webui
 META_TAGS:=net ai
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/openwebui
 META_WEBSITE:=https://openwebui.com/
-META_TUTORIAL:=https://doc.linkease.com/zh/guide/istoreos/software/openwebui.html
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/openwebui.html
 META_AUTOCONF:=path enable
 META_UCI:=openwebui
 
