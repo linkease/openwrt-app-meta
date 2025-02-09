@@ -13,7 +13,7 @@ META_AUTHOR:=ittools
 META_TAGS:=net
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/ittools
 META_WEBSITE:=https://it-tools.tech/
-META_TUTORIAL:=https://doc.linkease.com/zh/guide/istoreos/software/ittools.html
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/ittools.html
 
 include ../../meta.mk
 
