@@ -143,6 +143,7 @@ jobs:
         env:
           PUSH_TARGET: ${{ secrets.PUSH_TARGET_PREFIX }}/linkease/openwrt-app-meta.git
         run: |
+          git -C meta remote remove gitee || true
           git -C meta remote add gitee "$PUSH_TARGET"
           git -C meta push --all gitee || {
             git -C meta fetch --unshallow origin || exit 1 
