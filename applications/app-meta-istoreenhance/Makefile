@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.1.7
+PKG_VERSION:=0.1.9
 PKG_RELEASE:=5
 META_TITLE:=iStore增强
 META_TITLE.en:=iStoreEnhance
