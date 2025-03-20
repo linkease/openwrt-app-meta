@@ -12,7 +12,6 @@ META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/openfog
 META_WEBSITE:=https://openfogos.com/
 META_TUTORIAL:=https://openfogos.com/home/doc/istoreos_tutorial
-META_AUTOCONF:=enable
 META_UCI:=fogvdn
 
 include ../../meta.mk
