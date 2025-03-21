@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.1.4
-PKG_RELEASE:=20241208
+PKG_VERSION:=1.1.6
+PKG_RELEASE:=20250321
 META_TITLE:=网心云 - 容器魔方
 META_DEPENDS:=+luci-app-wxedge +luci-i18n-wxedge-zh-cn +docker-deps
 META_DESCRIPTION:=快来使用「网心云-容器魔方」，在线共享宽带即可赚点零花钱，每月可获得 30~200 左右的收益！现在上机最高享【80% 加成奖励+现金红包】 
