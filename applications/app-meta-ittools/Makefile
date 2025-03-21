@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.2
-PKG_RELEASE:=20230619
+PKG_VERSION:=1.0.4
+PKG_RELEASE:=20250321
 META_TITLE:=开发工具集
 META_TITLE.en:=IT-Tools
 META_DEPENDS:=+luci-app-ittools +luci-i18n-ittools-zh-cn +docker-deps
