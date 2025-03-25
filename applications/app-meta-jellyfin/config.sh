@@ -13,7 +13,7 @@ ISTORE_ACTION=install
 [ -z "$ISTORE_DONT_START" ] || ISTORE_ACTION=stop
 
 if [ -f /usr/libexec/istorec/jellyfin.sh ]; then
-    /usr/libexec/istorec/jellyfin.sh $ISTORE_ACTION
+    /usr/libexec/istorec/jellyfin.sh $ISTORE_ACTION || [ stop = $ISTORE_ACTION ]
 else
-    /usr/share/jellyfin/install.sh $ISTORE_ACTION
+    /usr/share/jellyfin/install.sh $ISTORE_ACTION || [ stop = $ISTORE_ACTION ]
 fi
