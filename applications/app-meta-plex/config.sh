@@ -9,4 +9,7 @@ uci -q batch <<-EOF >/dev/null || exit 1
     commit plex
 EOF
 
-/usr/libexec/istorec/plex.sh install
+ISTORE_ACTION=install
+[ -z "$ISTORE_DONT_START" ] || ISTORE_ACTION=stop
+
+/usr/libexec/istorec/plex.sh $ISTORE_ACTION || [ stop = $ISTORE_ACTION ]

@@ -9,4 +9,7 @@ uci -q batch <<-EOF >/dev/null || exit 1
     commit emby
 EOF
 
-/usr/libexec/istorec/emby.sh install
+ISTORE_ACTION=install
+[ -z "$ISTORE_DONT_START" ] || ISTORE_ACTION=stop
+
+/usr/libexec/istorec/emby.sh $ISTORE_ACTION || [ stop = $ISTORE_ACTION ]

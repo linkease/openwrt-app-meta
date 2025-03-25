@@ -8,4 +8,7 @@ uci -q batch <<-EOF >/dev/null || exit 1
     commit lanraragi
 EOF
 
-/usr/libexec/istorec/lanraragi.sh install
+ISTORE_ACTION=install
+[ -z "$ISTORE_DONT_START" ] || ISTORE_ACTION=stop
+
+/usr/libexec/istorec/lanraragi.sh $ISTORE_ACTION || [ stop = $ISTORE_ACTION ]

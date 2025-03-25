@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.2
-PKG_RELEASE:=20230619
+PKG_RELEASE:=20250325
 META_TITLE:=Plex影院
 META_TITLE.en:=Plex
 META_DEPENDS:=+luci-app-plex +luci-i18n-plex-zh-cn +docker-deps
