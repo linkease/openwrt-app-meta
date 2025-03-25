@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.3
-PKG_RELEASE:=20231117
+PKG_RELEASE:=20250325
 META_TITLE:=Emby影院
 META_TITLE.en:=Emby
 META_DEPENDS:=+luci-app-emby +luci-i18n-emby-zh-cn +docker-deps

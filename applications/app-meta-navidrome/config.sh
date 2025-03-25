@@ -8,4 +8,7 @@ uci -q batch <<-EOF >/dev/null || exit 1
     commit navidrome
 EOF
 
-/usr/libexec/istorec/navidrome.sh install
+ISTORE_ACTION=install
+[ -z "$ISTORE_DONT_START" ] || ISTORE_ACTION=stop
+
+/usr/libexec/istorec/navidrome.sh $ISTORE_ACTION || [ stop = $ISTORE_ACTION ]

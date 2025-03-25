@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.1.6
-PKG_RELEASE:=2
+PKG_RELEASE:=20250325
 META_TITLE:=iStore分身(iStoreDup)
 META_DEPENDS:=+vmease +luci-app-istoredup +luci-i18n-istoredup-zh-cn +docker-deps
 META_DESCRIPTION:=iStoreOS 的分身，可以把风险高的软件安装到分身里面，出问题不影响到主系统。
