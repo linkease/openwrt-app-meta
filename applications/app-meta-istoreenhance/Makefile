@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=0.2.9
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 META_TITLE:=iStore增强
 META_TITLE.en:=iStoreEnhance
 META_DEPENDS:=+istoreenhance +luci-app-istoreenhance +luci-i18n-istoreenhance-zh-cn
