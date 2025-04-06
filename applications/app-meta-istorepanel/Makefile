@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.6
-PKG_RELEASE:=20250208
+PKG_RELEASE:=20250406
 META_TITLE:=1Panel
 META_TITLE.en:=1Panel
 META_DEPENDS:=+luci-app-istorepanel +luci-i18n-istorepanel-zh-cn +docker-deps
