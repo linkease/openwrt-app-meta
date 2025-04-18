@@ -3,9 +3,9 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=0.3.0
-PKG_RELEASE:=1
-META_TITLE:=KSpeeder增强
-META_TITLE.en:=KSpeeder
+PKG_RELEASE:=2
+META_TITLE:=KSpeeder(原iStore增强)
+META_TITLE.en:=KSpeeder(iStoreEnhance)
 META_DEPENDS:=+istoreenhance +luci-app-istoreenhance +luci-i18n-istoreenhance-zh-cn
 META_DESCRIPTION:=KSpeeder增强插件可以有效的解决Docker等网络问题，让 iStore 更好用。
 META_DESCRIPTION.en:=KSpeeder is a tool to fix network issues for iStore.
