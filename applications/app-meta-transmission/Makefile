@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=3.00
-PKG_RELEASE:=6
+PKG_VERSION:=4.00
+PKG_RELEASE:=1
 META_TITLE:=Transmission
 META_DEPENDS:=+transmission-daemon-openssl +transmission-web-control +luci-app-transmission +luci-i18n-transmission-zh-cn
 META_DESCRIPTION:=专业磁力种子下载工具
