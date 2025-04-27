@@ -11,7 +11,7 @@ META_DESCRIPTION:=一个支持多存储的文件列表程序，提供 WEB 界面
 META_DESCRIPTION.en:=A file list program that supports multiple storage.
 META_AUTHOR:=alist-org/sbwml
 META_TAGS:=net tool
-META_LUCI_ENTRY:=/cgi-bin/luci/admin/nas/alist
+META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/alist
 META_WEBSITE:=https://github.com/alist-org/alist
 META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/alist.html
 
