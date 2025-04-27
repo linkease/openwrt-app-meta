@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.2.0
-PKG_RELEASE:=7
+PKG_VERSION:=4.2.1
+PKG_RELEASE:=2
 META_TITLE:=DDNS-GO
 META_TITLE.en:=DDNS-GO
 META_DEPENDS:=+luci-app-ddns-go +luci-i18n-ddns-go-zh-cn +ddnsgo
