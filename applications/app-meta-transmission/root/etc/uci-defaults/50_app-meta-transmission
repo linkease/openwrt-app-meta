@@ -1,9 +1,12 @@
 #!/bin/sh
 
-uci -q batch <<-EOF >/dev/null
-	delete transmission.@transmission[-1].web_home
-	commit transmission
-EOF
+if [ -d /usr/share/transmission/web ]; then
+	uci -q set 'transmission.@transmission[-1].web_home=/usr/share/transmission/web'
+else
+	uci -q delete 'transmission.@transmission[-1].web_home'
+fi
+
+uci -q commit transmission
 
 sed -i 's/reload_service(/reload_service0(/g' /etc/init.d/transmission
 
