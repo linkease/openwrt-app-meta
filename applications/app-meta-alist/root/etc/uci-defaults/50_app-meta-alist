@@ -1,0 +1,24 @@
+#!/bin/sh
+
+[ "$(uci -q get alist.config)" = "alist" ] && exit 0
+
+/etc/init.d/alist stop
+
+ALIST_DATA_DIR=$(uci -q get 'alist.@alist[0].data_dir' || echo "/etc/alist")
+ALIST_PORT=$(uci -q get 'alist.@alist[0].port')
+ALIST_ENABLED=$(uci -q get 'alist.@alist[0].enabled')
+
+mkdir -p /etc/alist
+[ '/etc/alist' = "$ALIST_DATA_DIR" ] || cp -a "$ALIST_DATA_DIR/." /etc/alist/
+[ -s /etc/alist/data.db-opkg.backup ] && cp -a /etc/alist/data.db-opkg.backup /etc/alist/data.db && rm -f /etc/alist/data.db-opkg.backup
+
+[ -f /etc/config/alist.old ] || cp -a /etc/config/alist /etc/config/alist.old
+cp -a /etc/config/alist-opkg /etc/config/alist
+
+[ -n "$ALIST_PORT" ] && uci set alist.config.listen_http_port=$ALIST_PORT
+[ 1 = "$ALIST_ENABLED" ] && uci set alist.config.enabled=1
+uci commit alist
+
+/etc/init.d/alist start
+
+exit 0
