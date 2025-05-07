@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.3.0
-PKG_RELEASE:=2
+PKG_VERSION:=0.3.1
+PKG_RELEASE:=1
 META_TITLE:=KSpeeder(原iStore增强)
 META_TITLE.en:=KSpeeder(iStoreEnhance)
 META_DEPENDS:=+istoreenhance +luci-app-istoreenhance +luci-i18n-istoreenhance-zh-cn
@@ -13,8 +13,8 @@ META_AUTHOR:=xiaobao
 META_ARCH:=x86_64 aarch64
 META_TAGS:=nas service
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/istoreenhance
-META_WEBSITE:=https://kspeeder.istoreos.com/
-META_TUTORIAL:=https://kspeeder.istoreos.com/guide/getting-started.html
+META_WEBSITE:=https://kspeeder.com/
+META_TUTORIAL:=https://kspeeder.com/guide/getting-started.html
 
 include ../../meta.mk
 
