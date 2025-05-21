@@ -3,10 +3,10 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.4.10
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 META_TITLE:=路由狗
 META_TITLE.en:=routerdog
-META_DEPENDS:=+luci-app-routerdog +luci-i18n-routerdog-zh-cn +routergo
+META_DEPENDS:=+luci-app-routerdog +luci-i18n-routerdog-zh-cn +routergo +docker-deps
 META_DESCRIPTION:=为iStoreOS和Openwrt提供NAS界面和APP
 META_DESCRIPTION.en:=The new naspage and app for iStoreOS or Openwrt.
 META_AUTHOR:=Carseason
