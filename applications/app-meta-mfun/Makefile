@@ -3,9 +3,9 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=0.0.8
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 META_TITLE:=MFUN
-META_DEPENDS:=+luci-app-mfun +luci-i18n-mfun-zh-cn
+META_DEPENDS:=+luci-app-mfun +luci-i18n-mfun-zh-cn +docker-deps
 META_DESCRIPTION:=轻量的影音媒体库
 META_DESCRIPTION.en:=Mfun is an multimedia program.
 META_AUTHOR:=Carseason

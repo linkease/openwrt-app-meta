@@ -3,10 +3,10 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.4
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 META_TITLE:=旺财狗
 META_TITLE.en:=rebatedog
-META_DEPENDS:=+luci-app-rebatedog +luci-i18n-rebatedog-zh-cn
+META_DEPENDS:=+luci-app-rebatedog +luci-i18n-rebatedog-zh-cn +docker-deps
 META_DESCRIPTION:=一款跨平台的淘客发单系统
 META_DESCRIPTION.en:=A multi platform system for TaoKe.
 META_AUTHOR:=泡泡
