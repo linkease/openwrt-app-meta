@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -d /usr/share/transmission/web ]; then
+if [ -f /usr/share/transmission/web/index.html ]; then
 	uci -q set 'transmission.@transmission[-1].web_home=/usr/share/transmission/web'
 else
 	uci -q delete 'transmission.@transmission[-1].web_home'
