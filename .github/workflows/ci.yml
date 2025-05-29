@@ -38,7 +38,7 @@ jobs:
 
       - name: 'Restore state from cache'
         id: build-cache
-        uses: actions/cache@v3
+        uses: actions/cache/restore@v4
         with:
           path: |
             meta/.git
@@ -56,7 +56,7 @@ jobs:
 
       - name: 'Restore SDK from cache'
         id: sdk-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ github.workspace }}/.sdk
           key: ${{ env.SDK_NAME }}
@@ -136,6 +136,14 @@ jobs:
           rsync -a --del ${SDK_NAME}/bin/packages/aarch64_cortex-a53/compat $REPO_DEST
           rsync -a --del ${SDK_NAME}/bin/packages/aarch64_cortex-a53/meta $REPO_DEST
           echo "status=success" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache/save@v4
+        if: steps.upload.outputs.status == 'success' && !cancelled() && !inputs.test
+        with:
+          path: |
+            meta/.git
+            cache
+          key: ${{ steps.build-cache.outputs.cache-primary-key }}
 
       - name: Push to gitee
         id: gitee
