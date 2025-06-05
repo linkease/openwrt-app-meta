@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.2.0
-PKG_RELEASE:=2
+PKG_VERSION:=1.3.0
+PKG_RELEASE:=1
 META_TITLE:=ZeroTier
 META_DEPENDS:=+zerotier +luci-app-zerotier +luci-i18n-zerotier-zh-cn
 META_DESCRIPTION:=非常简单易用的内网穿透工具，能实现虚拟局域网的组建。
