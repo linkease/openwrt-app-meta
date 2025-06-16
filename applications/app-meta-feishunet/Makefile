@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=2.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 META_TITLE:=飞鼠p2p组网
 META_TITLE.en:=feishunet
 META_DEPENDS:=+luci-app-feishuvpn +luci-i18n-feishuvpn-zh-cn +docker-deps
