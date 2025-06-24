@@ -2,11 +2,11 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=3.9.2
+PKG_VERSION:=9.2.18
 PKG_RELEASE:=1
 META_TITLE:=UU游戏加速器
 META_DEPENDS:=+uugamebooster +luci-i18n-uugamebooster-zh-cn +luci-app-uugamebooster
-META_DESCRIPTION:=一个富家子弟用的主机游戏加速器 (开启服务后，使用手机APP绑定路由器并指定加速主机)。
+META_DESCRIPTION:=付费游戏加速器 (开启服务后，使用手机APP绑定路由器并指定加速主机)。
 META_AUTHOR:=网易
 META_TAGS:=net tool
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/uuplugin
