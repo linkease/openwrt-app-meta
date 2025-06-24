@@ -3,10 +3,10 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=3.44.0
-PKG_RELEASE:=3
+PKG_RELEASE:=4
 META_TITLE:=alist网盘
 META_TITLE.en:=Alist Net disk
-META_DEPENDS:=+luci-i18n-alist-zh-cn +alist +luci-app-alist
+META_DEPENDS:=+luci-i18n-alist-zh-cn +alist +luci-app-alist +luci-js-deps
 META_DESCRIPTION:=一个支持多存储的文件列表程序，提供 WEB 界面和 WebDAV 服务。（如果从 3.29.x 升级失败，那就先卸载再安装）
 META_DESCRIPTION.en:=A file list program that supports multiple storage.
 META_AUTHOR:=alist-org/sbwml
