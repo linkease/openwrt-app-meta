@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=2.0.8.4
-PKG_RELEASE:=2
+PKG_VERSION:=2.0.8.5
+PKG_RELEASE:=1
 META_TITLE:=迅游
 META_DEPENDS:=+xunyou +luci-app-xunyou +luci-i18n-xunyou-zh-cn
 META_DESCRIPTION:=迅游是一款小巧且功能强大的网游加速器，迅游所采用的第五代网游加速技术能更有效地为您解决网游卡机、掉线、延时高、登录难等问题。支持x86_64，arm64平台。
