@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
+PKG_VERSION:=3.0.5
 PKG_RELEASE:=1
 META_TITLE:=FTP服务器
 META_DEPENDS:=+vsftpd-alt +luci-app-vsftpd +luci-i18n-vsftpd-zh-cn
