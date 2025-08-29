@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=4.1.0
+PKG_VERSION:=4.1.1
 PKG_RELEASE:=1
 META_TITLE:=OpenList网盘
 META_TITLE.en:=OpenList Net disk
