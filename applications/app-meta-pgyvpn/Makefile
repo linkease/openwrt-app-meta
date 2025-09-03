@@ -13,3 +13,4 @@ META_WEBSITE:=https://pgy.oray.com
 
 include ../../meta.mk
 
+# call BuildPackage - OpenWrt buildroot signature
