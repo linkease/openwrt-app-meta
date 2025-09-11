@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.7.4
-PKG_RELEASE:=2
+PKG_VERSION:=1.7.5
+PKG_RELEASE:=4
 META_TITLE:=易有云
 META_TITLE.en:=LinkEase
 META_DEPENDS:=+linkease +luci-app-linkease +luci-i18n-linkease-zh-cn
