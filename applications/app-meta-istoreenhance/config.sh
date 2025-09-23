@@ -1,6 +1,5 @@
 
 [ -z "$ISTORE_CONF_DIR" ] && exit 1
-[ -z "$ISTORE_CACHE_DIR" ] && exit 1
 
 ENABLED=1
 ISTORE_ACTION=start
