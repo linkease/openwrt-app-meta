@@ -9,6 +9,7 @@ if [ -n "$ISTORE_DONT_START" ]; then
 fi
 
 uci -q batch <<-EOF >/dev/null || exit 1
+    mkdir $ISTORE_CONF_DIR/iStoreEnhance
     set istoreenhance.@istoreenhance[0].enabled=$ENABLED
     set istoreenhance.@istoreenhance[0].cache='$ISTORE_CONF_DIR/iStoreEnhance'
     commit istoreenhance
