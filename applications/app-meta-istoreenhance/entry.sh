@@ -53,8 +53,3 @@ case ${ACTION} in
     exit 1
   ;;
 esac
-  *)
-    echo "Unknown Action" >&2
-    exit 1
-  ;;
-esac
