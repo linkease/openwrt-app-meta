@@ -15,6 +15,8 @@ META_TAGS:=nas service
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/istoreenhance
 META_WEBSITE:=https://kspeeder.com/
 META_TUTORIAL:=https://kspeeder.com/guide/getting-started.html
+META_AUTOCONF:=path enable
+META_UCI:=istoreenhance
 
 include ../../meta.mk
 
