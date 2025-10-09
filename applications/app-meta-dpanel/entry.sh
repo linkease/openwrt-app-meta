@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ISTOREC_SCRIPT=/usr/libexec/dpanel/dpanel.sh
+ISTOREC_SCRIPT=/usr/libexec/istorec/dpanel.sh
 
 status(){
 	local host="$1"
