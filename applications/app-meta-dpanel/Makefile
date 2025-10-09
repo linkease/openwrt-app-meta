@@ -1,0 +1,21 @@
+# This is free software, licensed under the Apache License, Version 2.0 .
+
+include $(TOPDIR)/rules.mk
+
+PKG_VERSION:=1.0.0
+PKG_RELEASE:=20251009
+META_TITLE:=dPanel 轻量化 Docker 可视化面板
+META_TITLE.en:=dPanel - lightweight docker management panel
+META_DEPENDS:=+luci-app-dpanel +luci-i18n-dpanel-zh-cn +docker-deps
+META_DESCRIPTION:=轻量化 docker 可视化管理面板。lightweight panel for docker
+META_DESCRIPTION.en:=A lightweight docker visual management panel.
+META_AUTHOR:=donknap
+META_TAGS:=net admin
+META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/dpanel
+META_WEBSITE:=https://github.com/donknap/dpanel
+META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/dpanel.html
+
+include ../../meta.mk
+
+# call BuildPackage - OpenWrt buildroot signature
+
