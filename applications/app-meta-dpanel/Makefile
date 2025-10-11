@@ -4,10 +4,10 @@ include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.0
 PKG_RELEASE:=20251009
-META_TITLE:=DPanel 轻量化 Docker 可视化面板
+META_TITLE:=DPanel 可视化面板
 META_TITLE.en:=DPanel - lightweight docker management panel
 META_DEPENDS:=+luci-app-dpanel +luci-i18n-dpanel-zh-cn +docker-deps
-META_DESCRIPTION:=轻量化 docker 可视化管理面板。lightweight panel for docker
+META_DESCRIPTION:=轻量化 docker 可视化管理面板。
 META_DESCRIPTION.en:=A lightweight docker visual management panel.
 META_AUTHOR:=donknap
 META_TAGS:=net
