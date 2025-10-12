@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.5
-PKG_RELEASE:=20251011
+PKG_VERSION:=1.1.0
+PKG_RELEASE:=20251012
 META_TITLE:=Ubuntu
 META_DEPENDS:=+luci-app-ubuntu2 +luci-i18n-ubuntu2-zh-cn +docker-deps
 META_DESCRIPTION:=带Web远程桌面的高性能Docker版Ubuntu。
