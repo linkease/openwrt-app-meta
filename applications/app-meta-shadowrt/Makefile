@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.1.5
+PKG_VERSION:=1.1.6
 PKG_RELEASE:=1
 META_TITLE:=ShadoWRT（系统分身）
 META_TITLE.en=ShadoWRT
