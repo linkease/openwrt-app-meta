@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=9.3.0
+PKG_VERSION:=9.8.0
 PKG_RELEASE:=1
 META_TITLE:=UU游戏加速器
 META_DEPENDS:=+uugamebooster +luci-i18n-uugamebooster-zh-cn +luci-app-uugamebooster
