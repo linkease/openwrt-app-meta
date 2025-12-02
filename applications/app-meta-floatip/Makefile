@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.8
-PKG_RELEASE:=2
+PKG_VERSION:=1.0.10
+PKG_RELEASE:=1
 META_TITLE:=浮动网关
 META_TITLE.en:=FloagingGateway
 META_DEPENDS:=+floatip +luci-app-floatip +luci-i18n-floatip-zh-cn
