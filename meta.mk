@@ -18,7 +18,9 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
 include $(INCLUDE_DIR)/package.mk
 
-escape_json=$(strip $(subst ",\",$(subst \,\\\\,$(1))))
+escape_json=$(strip $(subst $(newline),\n,$(subst ",\",$(subst \,\\,$(strip $(1))))))
+escape_make=$(strip $(subst ",\",$(subst \,\\\\,$(subst $(newline),,$(1)))))
+META_ESCAPED_AUTHOR:=$(call escape_json,$(META_AUTHOR))
 META_ESCAPED_TITLE:=$(call escape_json,$(META_TITLE))
 META_ESCAPED_DESCRIPTION:=$(call escape_json,$(META_DESCRIPTION))
 META_ESCAPED_TITLE.en:=$(call escape_json,$(META_TITLE.en))
@@ -53,7 +55,7 @@ define Package/$(PKG_NAME)/JsonInfo
   "title": "$(META_ESCAPED_TITLE)",
 $(if $(META_ESCAPED_TITLE.en),  "title_en": "$(META_ESCAPED_TITLE.en)"$(comma))
   "entry": "$(META_LUCI_ENTRY)",
-  "author": "$(META_AUTHOR)",
+  "author": "$(META_ESCAPED_AUTHOR)",
   "website": "$(META_WEBSITE)",
 $(if $(META_TUTORIAL),  "tutorial": "$(META_TUTORIAL)"$(comma))
   "version": "$(PKG_VERSION)",
@@ -83,7 +85,7 @@ define Package/$(PKG_NAME)/install
 	if [ -f ./entry.sh ]; then \
 		$(INSTALL_BIN) ./entry.sh $(1)/usr/libexec/istoree/$(META_BASENAME).sh ; \
 	fi;
-	echo "$(call escape_json,$(call Package/$(PKG_NAME)/JsonInfo))" > $(1)/usr/lib/opkg/meta/$(META_BASENAME).json
+	echo "$(call escape_make,$(call Package/$(PKG_NAME)/JsonInfo))" > $(1)/usr/lib/opkg/meta/$(META_BASENAME).json
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
