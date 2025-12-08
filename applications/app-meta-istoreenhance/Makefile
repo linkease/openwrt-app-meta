@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.4.1
+PKG_VERSION:=0.5.0
 PKG_RELEASE:=1
 META_TITLE:=KSpeeder(原iStore增强)
 META_TITLE.en:=KSpeeder(iStoreEnhance)
