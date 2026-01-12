@@ -11,6 +11,7 @@ META_ARCH:=x86_64 aarch64
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/owjdxb
 META_WEBSITE:=https://www.iepose.com/?from=istore
 META_TUTORIAL:=https://www.iepose.com/service?from=istore
+
 include ../../meta.mk
 
 # call BuildPackage - OpenWrt buildroot signature
