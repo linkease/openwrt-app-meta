@@ -1,6 +1,6 @@
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=4.0.6
+PKG_VERSION:=4.0.7
 PKG_RELEASE:=20260113
 META_TITLE:=节点小宝-远程助手
 META_DEPENDS:=+owjdxb
