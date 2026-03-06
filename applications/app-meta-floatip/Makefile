@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.10
+PKG_VERSION:=1.1.0
 PKG_RELEASE:=1
 META_TITLE:=浮动网关
 META_TITLE.en:=FloagingGateway
@@ -18,3 +18,4 @@ META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/floatip.html
 include ../../meta.mk
 
 # call BuildPackage - OpenWrt buildroot signature
+
