@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
-PKG_RELEASE:=7
+PKG_VERSION:=1.0.1
+PKG_RELEASE:=1
 META_TITLE:=酷友社KAI
 META_TITLE.en:=kai
 META_DEPENDS:=+luci-app-kai +kai +kai_session
@@ -14,6 +14,8 @@ META_ARCH:=x86_64 aarch64
 META_TAGS:=system ai
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/kai
 META_WEBSITE:=https://www.koolcenter.com
+META_AUTOCONF:=path enable
+META_UCI:=kai
 
 include ../../meta.mk
 
