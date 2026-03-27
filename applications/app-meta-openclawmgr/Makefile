@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.1.6
+PKG_VERSION:=0.1.7
 PKG_RELEASE:=1
 
 META_TITLE:=OpenClaw Launcher
@@ -15,7 +15,7 @@ META_ARCH:=x86_64 aarch64
 META_TAGS:=ai
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/openclawmgr
 META_WEBSITE:=https://github.com/openclaw/openclaw
-META_TUTORIAL:=https://www.koolcenter.com/tags/c/soft-guides/16/openclaw
+META_TUTORIAL:=https://www.koolcenter.com/t/topic/19042
 META_AUTOCONF:=path enable
 META_UCI:=openclawmgr
 
