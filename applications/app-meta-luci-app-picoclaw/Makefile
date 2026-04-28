@@ -1,14 +1,14 @@
-# This is free software, licensed under the Apache License, Version 2.0 .
+# This is free software, licensed under the Apache License, Version 2.0.
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.1.3
+PKG_VERSION:=1.1.6
 PKG_RELEASE:=1
 
-META_TITLE:=PicoClaw AI 管理器
+META_TITLE:=PicoClaw AI 助手
 META_TITLE.en:=PicoClaw AI Manager
 META_DEPENDS:=+luci-app-picoclaw
-META_DESCRIPTION:=PicoClaw 轻量级AI网关的LuCI管理界面。支持服务监控、配置编辑、频道管理、对话聊天、硬件控制(GPIO/USB)、技能系统、定时任务、模型配置和搜索引擎配置，支持中英日德葡5种语言。
+META_DESCRIPTION:=PicoClaw 轻量级AI助手的LuCI管理界面。支持服务监控、配置编辑、通道管理、聊天交互、硬件控制、技能系统、定时任务、模型配置、搜索引擎配置、5语言国际化。
 META_DESCRIPTION.en:=LuCI management interface for PicoClaw AI assistant. Features: service monitoring, config editing, channel management, chat, hardware control, skills system, cron jobs, model config, search engine config, 5-language i18n.
 META_AUTHOR:=GennKann
 META_TAGS:=ai tool
