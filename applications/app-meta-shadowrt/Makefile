@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.1.7
+PKG_VERSION:=1.1.8
 PKG_RELEASE:=1
 META_TITLE:=ShadoWRT
 META_DEPENDS:=+luci-app-shadowrt +luci-i18n-shadowrt-zh-cn +docker-deps
