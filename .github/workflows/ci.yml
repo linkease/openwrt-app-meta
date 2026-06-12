@@ -14,8 +14,8 @@ on:
       - 'applications/**'
 
 env:
-  SDK_NAME: openwrt-sdk-21.02.2-armvirt-64_gcc-8.4.0_musl.Linux-x86_64
-  SDK_URL: https://downloads.openwrt.org/releases/21.02.2/targets/armvirt/64/
+  SDK_NAME: openwrt-sdk-mini-25.12.2
+  SDK_URL: https://github.com/linkease/istore-repo/releases/download/tools/
   TZ: Asia/Shanghai
 
 jobs:
@@ -76,7 +76,16 @@ jobs:
         run: |
           echo "untrusted comment: istore key" > ${SDK_NAME}/key-build
           echo "$BUILD_KEY" >> ${SDK_NAME}/key-build
-          cat meta/.github/workflows/key-build.pub > ${SDK_NAME}/key-build.pub
+
+      - name: Write apk build key
+        env:
+          BUILD_KEY_APK: ${{ secrets.BUILD_KEY_APK }}
+        run: |
+          [ -n "$BUILD_KEY_APK" ]
+          echo "-----BEGIN EC PRIVATE KEY-----" > ${SDK_NAME}/private-key.pem
+          echo "$BUILD_KEY_APK" >> ${SDK_NAME}/private-key.pem
+          echo "-----END EC PRIVATE KEY-----" >> ${SDK_NAME}/private-key.pem
+          touch ${SDK_NAME}/public-key.pem
 
       - name: Clean Code
         run: |
@@ -117,7 +126,10 @@ jobs:
         id: compile
         run: |
           cd ${SDK_NAME}
-          bash -c 'set -o pipefail ; make -j1 V=s defconfig package/{compile,index} 2>&1 | tee /tmp/openwrt-sdk-build.log'
+          bash -c 'set -o pipefail ; make -j1 CONFIG_JSON_CYCLONEDX_SBOM= CONFIG_USE_APK=y V=s defconfig package/{compile,index} 2>&1 | tee /tmp/openwrt-sdk-build.log'
+          bash -c 'set -o pipefail ; mv bin/packages bin/apks 2>&1 | tee /tmp/openwrt-sdk-build.log'
+          bash -c 'set -o pipefail ; make -j1 CONFIG_JSON_CYCLONEDX_SBOM= CONFIG_USE_APK= V=s defconfig package/{compile,index} 2>&1 | tee /tmp/openwrt-sdk-build.log'
+          find bin -name 'index.json' -exec rm -f '{}' ';'
           echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Last fail log
@@ -130,11 +142,17 @@ jobs:
         env:
           RSYNC_PASSWORD: ${{ secrets.RSYNC_PASSWORD }}
           REPO_DEST: ${{ secrets.RSYNC_DEST }}
+          REPO_DEST_APK: ${{ secrets.RSYNC_DEST_APK }}
         run: |
-          rsync --exclude='Packages' --exclude='Packages.*' -a ${SDK_NAME}/bin/packages/aarch64_cortex-a53/compat $REPO_DEST
-          rsync --exclude='Packages' --exclude='Packages.*' -a ${SDK_NAME}/bin/packages/aarch64_cortex-a53/meta $REPO_DEST
-          rsync -a --del ${SDK_NAME}/bin/packages/aarch64_cortex-a53/compat $REPO_DEST
-          rsync -a --del ${SDK_NAME}/bin/packages/aarch64_cortex-a53/meta $REPO_DEST
+          rsync --exclude='Packages' --exclude='Packages.*' -a ${SDK_NAME}/bin/packages/aarch64_generic/compat $REPO_DEST
+          rsync --exclude='Packages' --exclude='Packages.*' -a ${SDK_NAME}/bin/packages/aarch64_generic/meta $REPO_DEST
+          rsync --exclude='packages.adb' -a ${SDK_NAME}/bin/apks/aarch64_generic/compat $REPO_DEST_APK
+          rsync --exclude='packages.adb' -a ${SDK_NAME}/bin/apks/aarch64_generic/meta $REPO_DEST_APK
+
+          rsync -a --del ${SDK_NAME}/bin/packages/aarch64_generic/compat $REPO_DEST
+          rsync -a --del ${SDK_NAME}/bin/packages/aarch64_generic/meta $REPO_DEST
+          rsync -a --del ${SDK_NAME}/bin/apks/aarch64_generic/compat $REPO_DEST_APK
+          rsync -a --del ${SDK_NAME}/bin/apks/aarch64_generic/meta $REPO_DEST_APK
           echo "status=success" >> $GITHUB_OUTPUT
 
       - uses: actions/cache/save@v4
@@ -176,5 +194,7 @@ jobs:
         with:
           name: ipks
           path: |
-            ${{ env.SDK_NAME }}/bin/packages/aarch64_cortex-a53/compat
-            ${{ env.SDK_NAME }}/bin/packages/aarch64_cortex-a53/meta
+            ${{ env.SDK_NAME }}/bin/packages/aarch64_generic/compat
+            ${{ env.SDK_NAME }}/bin/packages/aarch64_generic/meta
+            ${{ env.SDK_NAME }}/bin/apks/aarch64_generic/compat
+            ${{ env.SDK_NAME }}/bin/apks/aarch64_generic/meta
