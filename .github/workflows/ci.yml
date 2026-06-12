@@ -101,7 +101,6 @@ jobs:
           # CONFIG_ALL_NONSHARED is not set
           # CONFIG_ALL_KMODS is not set
           CONFIG_ALL=y
-          # CONFIG_JSON_CYCLONEDX_SBOM is not set
           CONFIG_SIGNED_PACKAGES=y
           EOF
 
@@ -127,9 +126,10 @@ jobs:
         id: compile
         run: |
           cd ${SDK_NAME}
-          bash -c 'set -o pipefail ; make -j1 CONFIG_USE_APK=y V=s defconfig package/{compile,index} 2>&1 | tee /tmp/openwrt-sdk-build.log'
+          bash -c 'set -o pipefail ; make -j1 CONFIG_JSON_CYCLONEDX_SBOM= CONFIG_USE_APK=y V=s defconfig package/{compile,index} 2>&1 | tee /tmp/openwrt-sdk-build.log'
           bash -c 'set -o pipefail ; mv bin/packages bin/apks 2>&1 | tee /tmp/openwrt-sdk-build.log'
-          bash -c 'set -o pipefail ; make -j1 CONFIG_USE_APK= V=s defconfig package/{compile,index} 2>&1 | tee /tmp/openwrt-sdk-build.log'
+          bash -c 'set -o pipefail ; make -j1 CONFIG_JSON_CYCLONEDX_SBOM= CONFIG_USE_APK= V=s defconfig package/{compile,index} 2>&1 | tee /tmp/openwrt-sdk-build.log'
+          find bin -name 'index.json' -exec rm -f '{}' ';'
           echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Last fail log
