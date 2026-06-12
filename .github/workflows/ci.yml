@@ -85,6 +85,7 @@ jobs:
           echo "-----BEGIN EC PRIVATE KEY-----" > ${SDK_NAME}/private-key.pem
           echo "$BUILD_KEY_APK" >> ${SDK_NAME}/private-key.pem
           echo "-----END EC PRIVATE KEY-----" >> ${SDK_NAME}/private-key.pem
+          touch ${SDK_NAME}/public-key.pem
 
       - name: Clean Code
         run: |
