@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=svn1113
-PKG_RELEASE:=3
+PKG_VERSION:=1113
+PKG_RELEASE:=4
 META_TITLE:=KMS服务器
 META_DEPENDS:=+luci-i18n-vlmcsd-zh-cn +luci-app-vlmcsd +vlmcsd
 META_DESCRIPTION:=KMS服务器可用于激活Windows或Office

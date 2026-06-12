@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0-25.0
-PKG_RELEASE:=1
+PKG_VERSION:=1.0.25.0
+PKG_RELEASE:=2
 META_TITLE:=udpxy
 META_DEPENDS:=+luci-app-udpxy +luci-i18n-udpxy-zh-cn +udpxy
 META_DESCRIPTION:=udpxy是UDP到HTTP的多播流量中继守护程序
