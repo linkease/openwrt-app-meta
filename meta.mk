@@ -72,8 +72,9 @@ $(if $(META_FLAGS),  "flags": [$(patsubst %$(comma),%,$(subst $(space),,$(foreac
 }
 endef
 
+META_DIR:=$(if $(CONFIG_USE_APK),lib/apk/meta,usr/lib/opkg/meta)
 define Package/$(PKG_NAME)/install
-	$(INSTALL_DIR) $(1)/usr/lib/opkg/meta $(1)/usr/libexec/istorea $(1)/usr/libexec/istoree $(1)/www/luci-static/resources/app-icons
+	$(INSTALL_DIR) $(1)/$(META_DIR) $(1)/usr/libexec/istorea $(1)/usr/libexec/istoree $(1)/www/luci-static/resources/app-icons
 	if [ -d ./root ]; then \
 	  cp -pR ./root/* $(1)/; \
 	else true; fi
@@ -86,7 +87,7 @@ define Package/$(PKG_NAME)/install
 	if [ -f ./entry.sh ]; then \
 		$(INSTALL_BIN) ./entry.sh $(1)/usr/libexec/istoree/$(META_BASENAME).sh ; \
 	fi;
-	echo "$(call escape_ipkg,$(Package/$(PKG_NAME)/JsonInfo))" > $(1)/usr/lib/opkg/meta/$(META_BASENAME).json
+	echo "$(call escape_ipkg,$(Package/$(PKG_NAME)/JsonInfo))" > $(1)/$(META_DIR)/$(META_BASENAME).json
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
