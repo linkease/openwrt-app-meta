@@ -30,16 +30,10 @@ META_ESCAPED_DESCRIPTION.en:=$(call escape_json,$(META_DESCRIPTION.en))
 define Package/$(PKG_NAME)
   SECTION:=meta
   CATEGORY:=Metadata
-  TITLE:=$(META_TITLE)
+  TITLE:=Metadata for $(META_BASENAME)
   DEPENDS:=$(META_DEPENDS)
   PKGARCH:=all
 endef
-
-ifneq ($(META_DESCRIPTION),)
- define Package/$(PKG_NAME)/description
-   $(strip $(META_DESCRIPTION))
- endef
-endif
 
 define Build/Prepare
 endef
