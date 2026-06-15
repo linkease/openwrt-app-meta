@@ -8,6 +8,8 @@ on:
     types: [checks_requested]
 
 env:
+  SDK_NAME: openwrt-sdk-mini-25.12.2
+  SDK_URL: https://github.com/linkease/istore-repo/releases/download/tools/
   TZ: Asia/Shanghai
 
 jobs:
@@ -23,35 +25,73 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
 
-      - name: Checkout base on PR to pending
-        if: github.event_name != 'merge_group' && github.event.pull_request.base.repo.full_name != github.event.pull_request.head.repo.full_name
+      - name: Checkout base
+        if: github.event_name != 'merge_group'
         uses: actions/checkout@main
         with:
           fetch-depth: 1
           path: 'base'
 
-      - name: Checkout head on PR to pending
-        if: github.event_name != 'merge_group' && github.event.pull_request.base.repo.full_name != github.event.pull_request.head.repo.full_name
+      - name: Checkout head
+        if: github.event_name != 'merge_group'
         uses: actions/checkout@main
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 1
           path: 'head'
 
-      - name: Check workflows changes on PR to pending
+      - name: Check workflows changes
         if: github.event_name != 'merge_group' && github.event.pull_request.base.repo.full_name != github.event.pull_request.head.repo.full_name
         run: |
           [ -d base/.github/workflows ]
           [ -d head/.github/workflows ]
           rm -rf base/.github/workflows
           cp -a head/.github/workflows base/.github/
-          if git -C base diff --pretty= --name-only --no-renames | grep '^.github/workflows/'; then \
+          if git -C base diff --pretty= --name-only --no-renames .github/workflows | grep '^.github/workflows/'; then \
             echo "Don't HACK my workflows!" >&2; \
             echo "::error title=PR Check failed::Don't touch workflows!"; \
             exit 1; \
           else \
-            true; \
+            git -C base checkout -- .github/workflows || true; \
           fi
+
+      - name: 'Restore SDK from cache'
+        id: sdk-cache
+        if: github.event_name != 'merge_group'
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/.sdk
+          key: ${{ env.SDK_NAME }}
+
+      - name: Download SDK
+        if: github.event_name != 'merge_group'
+        run: |
+          [ -d "${{ github.workspace }}/.sdk" ] || mkdir -p "${{ github.workspace }}/.sdk"
+          [ -s ${{ github.workspace }}/.sdk/${SDK_NAME}.tar.xz ] || wget ${SDK_URL}${SDK_NAME}.tar.xz -O ${{ github.workspace }}/.sdk/${SDK_NAME}.tar.xz
+
+      - name: Unpack host tools from SDK
+        if: github.event_name != 'merge_group'
+        run: tar --strip-components=1 -xJf ${{ github.workspace }}/.sdk/${SDK_NAME}.tar.xz ${SDK_NAME}/staging_dir/host
+
+      - name: Check version syntax
+        if: github.event_name != 'merge_group'
+        run: |
+          [ -d base/applications ]
+          [ -d head/applications ]
+          rm -rf base/applications
+          cp -a head/applications base/applications
+          git -C base diff --pretty= --name-only --no-renames applications | grep '^applications/app-meta-.*/Makefile$' > staging_dir/files || true
+          echo >>staging_dir/files
+          echo "meta changes:"
+          cat staging_dir/files
+          while read; do
+            file="$REPLY"
+            [ -n "$file" ] || continue
+            [ -f "base/$file" ] || continue
+            ver=$( { grep '^PKG_VERSION:=' "base/$file" | tail -n1 && { grep '^PKG_RELEASE:=' "base/$file" || echo 'PKG_RELEASE:=1'; } | tail -n1 ; } | sed 's/^PKG_VERSION:=//;s/^PKG_RELEASE:=/-r/;' | tr -d '\n' )
+            [ -n "$ver" ] || { echo "Version is empty in $file" >&2; exit 1; }
+            ./staging_dir/host/bin/apk version -c "$ver" || { echo "Version $ver in $file is invalid" >&2; exit 1; }
+          done < staging_dir/files
 
       - name: Check pass
         run: |
