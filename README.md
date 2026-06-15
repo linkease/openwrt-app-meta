@@ -5,7 +5,7 @@
 * `applications`
     * `app-meta-*`
         * `Makefile` - 描述文件，参考下文约定
-        * `logo.png` - 图标文件，目前只支持png
+        * `logo.png` - 图标文件，目前只支持png。注意上传图标分辨率不要超过 256x256，文件大小不要超过 50KB（尝试 https://tinypng.com/ 压缩）
         * `config.sh` - [自动配置脚本](#自动配置脚本)
 * `fake-top` - 辅助文件，无需关注
 * `Makefile` - 辅助文件，无需关注
