@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=latest
+PKG_VERSION:=14
 PKG_RELEASE:=20260623
 META_TITLE:=梨享雾计算OpenFog
 META_DEPENDS:=+luci-app-fogvdn +luci-i18n-fogvdn-zh-cn
