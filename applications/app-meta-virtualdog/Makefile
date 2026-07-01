@@ -6,11 +6,11 @@ include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.0
 PKG_RELEASE:=1
-META_TITLE:=虚拟狗
+META_TITLE:=VirtualDog虚拟机
 META_TITLE.en:=VirtualDog
 META_DEPENDS:=+luci-app-virtualdog +virtualdog
-META_DESCRIPTION:=轻量虚拟狗 Web 管理工具
-META_DESCRIPTION.en:=VirtualDog Web management UI
+META_DESCRIPTION:=基于Qemu的虚拟机
+META_DESCRIPTION.en:=Virtual machine by Qemu 
 META_AUTHOR:=virtualdog
 META_ARCH:=x86_64 aarch64
 META_TAGS:=tool
