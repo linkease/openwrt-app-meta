@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.0
-PKG_RELEASE:=3
+PKG_VERSION:=1.0.1
+PKG_RELEASE:=1
 META_TITLE:=百度网盘
 META_TITLE.en:=BaiduDrive
 META_DEPENDS:=+luci-i18n-baidudrive-zh-cn +luci-app-baidudrive +baidudrive
