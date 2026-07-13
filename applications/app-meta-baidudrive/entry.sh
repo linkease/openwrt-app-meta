@@ -10,7 +10,7 @@ status(){
 
 	local port
 	port="$(uci get baidudrive.@baidudrive[0].port 2>/dev/null)"
-	[ -n "$port" ] || port="8080"
+	[ -n "$port" ] || port="10780"
 
 	if pidof baidudrive >/dev/null 2>&1; then
 		json_add_boolean "running" "1"
