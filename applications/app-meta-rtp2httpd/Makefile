@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=3.13.5
+PKG_VERSION:=3.15.3
 PKG_RELEASE:=1
 META_TITLE:=rtp2httpd
 META_DEPENDS:=+rtp2httpd +luci-app-rtp2httpd +luci-i18n-rtp2httpd-zh-cn
