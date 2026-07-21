@@ -3,10 +3,10 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=0.6.6
-PKG_RELEASE:=3
+PKG_RELEASE:=4
 META_TITLE:=istorex
 META_TITLE.en:=istorex
-META_DEPENDS:=+luci-app-istorex +luci-js-deps
+META_DEPENDS:=+luci-app-istorex
 META_DESCRIPTION:=为iStoreOS适配的全新首页。
 META_DESCRIPTION.en:=A new homepage for iStoreOS.
 META_AUTHOR:=Carseason
