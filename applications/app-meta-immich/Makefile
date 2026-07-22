@@ -3,11 +3,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.2
-PKG_RELEASE:=20250321
+PKG_RELEASE:=20260722
 
 META_TITLE:=immich相册
 META_TITLE.en:=immich
-META_DEPENDS:=+vmease +luci-app-immich +luci-i18n-immich-zh-cn +docker-deps
+META_DEPENDS:=+luci-app-immich +luci-i18n-immich-zh-cn +docker-deps
 META_DESCRIPTION:=Immich 是一个自我托管的照片和视频管理解决方案。
 META_DESCRIPTION.en:=Immich is a self-host photo and video management solution.
 META_AUTHOR:=immich
