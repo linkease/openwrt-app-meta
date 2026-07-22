@@ -3,9 +3,9 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=8.3.2
-PKG_RELEASE:=20250325
+PKG_RELEASE:=20260722
 META_TITLE:=Proxmox虚拟机(PVE)
-META_DEPENDS:=+vmease +luci-app-pve +luci-i18n-pve-zh-cn +docker-deps
+META_DEPENDS:=+luci-app-pve +luci-i18n-pve-zh-cn +docker-deps
 META_DESCRIPTION:=运行在 iStoreOS 上面的 Proxmox(PVE) 虚拟机平台。
 META_DESCRIPTION.en:=Proxmox in iStoreOS.
 META_AUTHOR:=Proxmox
