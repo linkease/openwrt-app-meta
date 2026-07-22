@@ -3,9 +3,9 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=0.8.5
-PKG_RELEASE:=20250325
+PKG_RELEASE:=20260722
 META_TITLE:=KVM虚拟机(WebVirtCloud)
-META_DEPENDS:=+vmease +luci-app-webvirtcloud +luci-i18n-webvirtcloud-zh-cn +docker-deps
+META_DEPENDS:=+luci-app-webvirtcloud +luci-i18n-webvirtcloud-zh-cn +docker-deps
 META_DESCRIPTION:=iStoreOS上面的 KVM 虚拟机，基于 WebVirtCloud 实现。
 META_DESCRIPTION.en:=KVM virtual machine implemented based on WebVirtCloud.
 META_AUTHOR:=webvirtcloud
