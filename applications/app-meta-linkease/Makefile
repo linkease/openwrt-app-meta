@@ -2,15 +2,15 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.7.5
-PKG_RELEASE:=4
+PKG_VERSION:=3.0.0
+PKG_RELEASE:=1
 META_TITLE:=易有云
 META_TITLE.en:=LinkEase
-META_DEPENDS:=+linkease +luci-app-linkease +luci-i18n-linkease-zh-cn
-META_DESCRIPTION:=易有云提供文件的外网访问，相册备份，文件同步，异地组网功能。需要配合电脑、手机客户端使用。
-META_DESCRIPTION.en:=LinkEase is a private cloud storage with its own remote connection to access personal files anytime, anywhere
+META_DEPENDS:=+linkease +linkease-common-bin +luci-app-linkease +luci-lib-linkeasefile +luci-i18n-linkease-zh-cn
+META_DESCRIPTION:=易有云提供远程访问、文件管理、相册备份、文件同步和备份仓库能力。
+META_DESCRIPTION.en:=LinkEase provides remote access, file management, photo backup, sync, and backup repository.
 META_AUTHOR:=xiaobao
-META_ARCH:=x86_64 aarch64
+META_ARCH:=x86_64 aarch64 arm
 META_TAGS:=nas service
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/linkease
 META_WEBSITE:=https://www.linkease.com/
