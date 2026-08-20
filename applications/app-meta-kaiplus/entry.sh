@@ -10,12 +10,23 @@ status(){
 
 	local port
 	port="$(uci get kaiplus.@kaiplus[0].port 2>/dev/null)"
-	local portsec=${port:-8198}
+	local portsec=${port:-8189}
+	local base_path
+	base_path="$(uci get kaiplus.@kaiplus[0].base_path 2>/dev/null)"
+	local basepath=${base_path:-/apps/kaiplus/}
+	case "$basepath" in
+		/*) ;;
+		*) basepath="/$basepath" ;;
+	esac
+	case "$basepath" in
+		*/) ;;
+		*) basepath="$basepath/" ;;
+	esac
 
 	if pidof kaiplus_bin >/dev/null 2>&1; then
 		json_add_boolean "running" "1"
 		json_add_string "web" ":${portsec}"
-		json_add_string "href" "http://$host:${portsec}/"
+		json_add_string "href" "http://$host:${portsec}${basepath}"
 		json_add_string "protocol" http
 		json_add_string "port" "${portsec}"
 		json_add_boolean "deployed" "1"
