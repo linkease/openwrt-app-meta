@@ -2,17 +2,17 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.6.6
-PKG_RELEASE:=4
-META_TITLE:=istorex
-META_TITLE.en:=istorex
-META_DEPENDS:=+luci-app-istorex
-META_DESCRIPTION:=为iStoreOS适配的全新首页。
-META_DESCRIPTION.en:=A new homepage for iStoreOS.
-META_AUTHOR:=Carseason
+PKG_VERSION:=1.0.0
+PKG_RELEASE:=1
+META_TITLE:=iStoreNAS(原iStoreX)
+META_TITLE.en:=iStoreNAS(iStoreX)
+META_DEPENDS:=+app-meta-linkeasefull +app-meta-dockermanager +app-meta-kaiplus +app-meta-kai +app-meta-baidudrive +app-meta-istoreenhance +luci-theme-istorenas
+META_DESCRIPTION:=把 iStoreOS 一键变成 NAS 系统，网盘，同步，组网，时光机，AI 等一网打尽。
+META_DESCRIPTION.en:=Turn iStoreOS into a NAS system in one click, covering cloud drives, sync, networking, Time Machine, AI, and more.
+META_AUTHOR:=Xiaobao
 META_ARCH:=x86_64 aarch64
 META_TAGS:=net system
-META_LUCI_ENTRY:=/cgi-bin/luci/admin/istorex
+META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/linkeasefull/open
 META_WEBSITE:=https://github.com/linkease/nas-packages-luci
 META_TUTORIAL:=https://doc.linkease.com/zh/guide/istore/software/istorex.html
 
