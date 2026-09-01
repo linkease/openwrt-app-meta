@@ -14,8 +14,7 @@ META_ARCH:=x86_64 aarch64
 META_TAGS:=networking service
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/51ddns
 META_WEBSITE:=https://www.51ddns.com/
-META_TUTORIAL:=https://github.com/21hkcloud/51ddns-openwrt#readme
-META_UCI:=51ddns
+META_TUTORIAL:=https://github.com/21hkcloud/51ddns-openwrt\#readme
 
 include ../../meta.mk
 
