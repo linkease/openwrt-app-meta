@@ -14,6 +14,8 @@ status(){
 	local base_path
 	base_path="$(uci get kaiplus.@kaiplus[0].base_path 2>/dev/null)"
 	local basepath=${base_path:-/apps/kaiplus/}
+	local external_port_enabled
+	external_port_enabled="$(uci get kaiplus.@kaiplus[0].external_port_enabled 2>/dev/null)"
 	case "$basepath" in
 		/*) ;;
 		*) basepath="/$basepath" ;;
@@ -25,10 +27,15 @@ status(){
 
 	if pidof kaiplus_bin >/dev/null 2>&1; then
 		json_add_boolean "running" "1"
-		json_add_string "web" ":${portsec}"
-		json_add_string "href" "http://$host:${portsec}${basepath}"
+		if [ "$external_port_enabled" = "1" ]; then
+			json_add_string "web" ":${portsec}"
+			json_add_string "href" "http://$host:${portsec}${basepath}"
+			json_add_string "port" "${portsec}"
+		else
+			json_add_string "web" "${basepath}"
+			json_add_string "href" "/cgi-bin/luci/admin/services/kaiplus/open"
+		fi
 		json_add_string "protocol" http
-		json_add_string "port" "${portsec}"
 		json_add_boolean "deployed" "1"
 	else
 		json_add_boolean "running" "0"
