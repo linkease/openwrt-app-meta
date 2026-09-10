@@ -2,11 +2,11 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.6
+PKG_VERSION:=1.0.7
 PKG_RELEASE:=1
 META_TITLE:=KaiPlus
 META_TITLE.en:=KaiPlus
-META_DEPENDS:=+luci-app-kaiplus +kaiplus
+META_DEPENDS:=+luci-app-kaiplus +kaiplus +luci-lib-openwrtauth
 META_DESCRIPTION:=KaiPlus AI 工作台(iStoreOS 24版本以上适用)
 META_DESCRIPTION.en:=KaiPlus AI workspace
 META_AUTHOR:=koolcenter
