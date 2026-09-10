@@ -3,12 +3,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.7
-PKG_RELEASE:=1
-META_TITLE:=KaiPlus
-META_TITLE.en:=KaiPlus
-META_DEPENDS:=+luci-app-kaiplus +kaiplus +luci-lib-openwrtauth
-META_DESCRIPTION:=KaiPlus AI 工作台(iStoreOS 24版本以上适用)
-META_DESCRIPTION.en:=KaiPlus AI workspace
+PKG_RELEASE:=3
+META_TITLE:=酷友社Kai
+META_TITLE.en:=KoolCenter KaiPlus
+META_DEPENDS:=+luci-app-kaiplus +kaiplus +luci-lib-linkeaseauth
+META_DESCRIPTION:=KaiPlus AI 解决各种问题，加速软件安装
+META_DESCRIPTION.en:=KaiPlus AI solve various network issues and speed up software installation.
 META_AUTHOR:=koolcenter
 META_ARCH:=x86_64 aarch64
 META_TAGS:=system ai
