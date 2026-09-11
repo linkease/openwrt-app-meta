@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.7.5
-PKG_RELEASE:=5
+PKG_VERSION:=0.7.7
+PKG_RELEASE:=1
 META_TITLE:=FastNet 网络测速
 META_TITLE.en:=FastNet
 META_DEPENDS:=+fastnet +luci-app-fastnet +luci-i18n-fastnet-zh-cn
@@ -18,4 +18,3 @@ META_WEBSITE:=https://www.koolcenter.com/t/topic/9148
 include ../../meta.mk
 
 # call BuildPackage - OpenWrt buildroot signature
-

@@ -18,6 +18,7 @@ uci -q batch <<-EOF >/dev/null || exit 1
 	set kaiplus.@kaiplus[0].bind_addr="0.0.0.0"
 	set kaiplus.@kaiplus[0].base_path="/apps/kaiplus/"
 	set kaiplus.@kaiplus[0].system_role="istoreos"
+	set kaiplus.@kaiplus[0].release_channel="stable"
 	set kaiplus.@kaiplus[0].auth_mode="openwrt_luci"
 	commit kaiplus
 EOF

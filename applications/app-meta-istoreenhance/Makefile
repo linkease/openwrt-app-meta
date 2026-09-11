@@ -3,14 +3,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=0.8.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 META_TITLE:=KSpeeder(原iStore增强)
 META_TITLE.en:=KSpeeder(iStoreEnhance)
 META_DEPENDS:=+istoreenhance +luci-app-istoreenhance +luci-i18n-istoreenhance-zh-cn
-META_DESCRIPTION:=KSpeeder增强插件可以有效的解决Docker等网络问题，让 iStore 更好用。
-META_DESCRIPTION.en:=KSpeeder is a tool to fix network issues for iStore.
+META_DESCRIPTION:=KSpeeder 为 Docker 镜像、软件包/文件下载和 GitHub/GitLab 公开仓库克隆提供网络加速。
+META_DESCRIPTION.en:=KSpeeder accelerates Docker images, package/file downloads, and public GitHub/GitLab repository clones.
 META_AUTHOR:=xiaobao
-META_ARCH:=x86_64 aarch64
+META_ARCH:=x86_64 aarch64 arm
 META_TAGS:=nas service
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/istoreenhance
 META_WEBSITE:=https://kspeeder.com/

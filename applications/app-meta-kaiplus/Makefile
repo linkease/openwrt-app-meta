@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0.8
+PKG_VERSION:=1.0.9
 PKG_RELEASE:=1
 META_TITLE:=酷友社Kai
 META_TITLE.en:=KoolCenter KaiPlus
@@ -12,7 +12,7 @@ META_DESCRIPTION.en:=KaiPlus AI solve various network issues and speed up softwa
 META_AUTHOR:=koolcenter
 META_ARCH:=x86_64 aarch64
 META_TAGS:=system ai
-META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/kaiplus/open
+META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/kaiplus
 META_WEBSITE:=https://ai.koolcenter.com
 META_AUTOCONF:=path enable
 META_UCI:=kaiplus
