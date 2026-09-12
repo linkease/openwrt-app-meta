@@ -2,7 +2,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.6.3
+PKG_VERSION:=0.6.4
 PKG_RELEASE:=1
 META_TITLE:=51DDNS 远程控制
 META_TITLE.en:=51DDNS Remote Access
