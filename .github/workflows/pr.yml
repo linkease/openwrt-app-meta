@@ -89,7 +89,7 @@ jobs:
             file="$REPLY"
             [ -n "$file" ] || continue
             [ -f "base/$file" ] || continue
-            ver=$( { grep '^PKG_VERSION:=' "base/$file" | tail -n1 && { grep '^PKG_RELEASE:=' "base/$file" || echo 'PKG_RELEASE:=1'; } | tail -n1 ; } | sed 's/^PKG_VERSION:=//;s/^PKG_RELEASE:=/-r/;' | tr -d '\n' )
+            ver=$( { grep '^PKG_VERSION:=' "base/$file" | tail -n1 && { grep '^PKG_RELEASE:=' "base/$file" || echo 'PKG_RELEASE:=1'; } | tail -n1 ; } | sed 's/^PKG_VERSION:=//;s/^PKG_RELEASE:=/-r/;' | tr -d '\n\r' )
             [ -n "$ver" ] || { echo "Version is empty in $file" >&2; exit 1; }
             ./staging_dir/host/bin/apk version -c "$ver" || { echo "Version $ver in $file is invalid" >&2; exit 1; }
           done < staging_dir/files
