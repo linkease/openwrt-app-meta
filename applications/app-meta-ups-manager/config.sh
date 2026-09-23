@@ -21,8 +21,8 @@ else
 	/etc/init.d/ups-manager restart 2>/dev/null || true
 fi
 
-# Reload rpcd smoothly using SIGHUP to discover new ubus objects without killing session tokens
-killall -HUP rpcd 2>/dev/null || true
+# Reload rpcd smoothly using official initscript to discover new ubus objects without killing session tokens or container rpcd
+/etc/init.d/rpcd reload 2>/dev/null || true
 rm -rf /tmp/luci-indexcache /tmp/luci-modulecache/
 
 exit 0
