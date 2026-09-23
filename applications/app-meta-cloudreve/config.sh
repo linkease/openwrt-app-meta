@@ -23,15 +23,11 @@ fi
 APP_DIR="$ISTORE_CONF_DIR/cloudreve"
 mkdir -p "$APP_DIR" >/dev/null 2>&1 || exit 1
 
-# 与本插件 UCI schema 对齐：匿名段 @cloudreve[0]，键名 storage_path / enabled
+# 与本插件 UCI schema 对齐：匿名段 @cloudreve[0]，键名 root_path / enabled
 uci -q batch <<-EOF >/dev/null || exit 1
-	set cloudreve.@cloudreve[0].storage_path="$BASE_DIR"
+	set cloudreve.@cloudreve[0].root_path="$BASE_DIR"
 	set cloudreve.@cloudreve[0].enabled=$ENABLED
 	commit cloudreve
 EOF
-
-if [ "$ENABLED" = "1" ] && [ -x /usr/libexec/istorec/cloudreve.sh ]; then
-	/usr/libexec/istorec/cloudreve.sh restart || true
-fi
 
 exit 0
