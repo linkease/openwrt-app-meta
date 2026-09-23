@@ -5,23 +5,23 @@ status(){
 	[ -n "$host" ] || host=127.0.0.1
 	. /usr/share/libubox/jshn.sh
 	json_init
-	json_add_string "app" "baidudrive"
+	json_add_string "app" "kai"
 	json_add_boolean "docker" "0"
 
 	local port
-	port="$(uci get baidudrive.@baidudrive[0].port 2>/dev/null)"
-	[ -n "$port" ] || port="10780"
+	port="$(uci get kai.@kai[0].port 2>/dev/null)"
+	local portsec=${port:-8197}
 
-	if pidof baidudrive >/dev/null 2>&1; then
+	if pidof kai_bin >/dev/null 2>&1; then
 		json_add_boolean "running" "1"
-		json_add_string "web" ":${port}"
-		json_add_string "href" "/cgi-bin/luci/admin/services/linkease_apps/open?id=baidudrive"
+		json_add_string "web" ":${portsec}"
+		json_add_string "href" "http://$host:${portsec}/"
 		json_add_string "protocol" http
-		json_add_string "port" "${port}"
+		json_add_string "port" "${portsec}"
 		json_add_boolean "deployed" "1"
 	else
 		json_add_boolean "running" "0"
-		if [ -x /etc/init.d/baidudrive ]; then
+		if [ -x /etc/init.d/kai ]; then
 			json_add_boolean "deployed" "1"
 		else
 			json_add_boolean "deployed" "0"
@@ -33,11 +33,11 @@ status(){
 }
 
 start(){
-	/etc/init.d/baidudrive start
+	/etc/init.d/kai start
 }
 
 stop(){
-	/etc/init.d/baidudrive stop
+	/etc/init.d/kai stop
 }
 
 ACTION=${1}
