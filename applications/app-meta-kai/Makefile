@@ -3,10 +3,10 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=1.0.2
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 META_TITLE:=酷友社KAI
 META_TITLE.en:=kai
-META_DEPENDS:=+luci-app-kai +kai +kai_session
+META_DEPENDS:=+luci-app-kai +kai +kai_session +kai-agent
 META_DESCRIPTION:=KAI安装软件助手(iStoreOS 24版本以上适用)
 META_DESCRIPTION.en:=AI software installation assistant
 META_AUTHOR:=koolcenter
