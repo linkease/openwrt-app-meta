@@ -29,11 +29,11 @@ status(){
 			json_add_boolean "running" "1"
 			if [ "$external_port_enabled" = "1" ]; then
 				json_add_string "web" ":${portsec}"
-				json_add_string "href" "http://$host:${portsec}${basepath}"
+				json_add_string "href" "/cgi-bin/luci/admin/services/linkease_apps/open?id=dockermanager"
 				json_add_string "port" "${portsec}"
 			else
 				json_add_string "web" "${basepath}"
-				json_add_string "href" "/cgi-bin/luci/admin/services/dockermanager/open"
+				json_add_string "href" "/cgi-bin/luci/admin/services/linkease_apps/open?id=dockermanager"
 			fi
 			json_add_string "protocol" http
 			json_add_boolean "deployed" "1"
