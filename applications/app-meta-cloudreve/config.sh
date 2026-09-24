@@ -30,4 +30,6 @@ uci -q batch <<-EOF >/dev/null || exit 1
 	commit cloudreve
 EOF
 
+/etc/init.d/cloudreve restart
+
 exit 0
