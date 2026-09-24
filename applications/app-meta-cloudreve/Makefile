@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=0.0.1
-PKG_RELEASE:=20260924
+PKG_RELEASE:=2026092417
 
 META_TITLE:=Cloudreve 私有云盘
 META_TITLE.en:=Cloudreve Private Cloud Storage
