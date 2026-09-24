@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=0.8.0
-PKG_RELEASE:=5
+PKG_RELEASE:=6
 META_TITLE:=KSpeeder(原iStore增强)
 META_TITLE.en:=KSpeeder(iStoreEnhance)
 META_DEPENDS:=+istoreenhance +luci-app-istoreenhance +luci-i18n-istoreenhance-zh-cn
@@ -12,7 +12,7 @@ META_DESCRIPTION.en:=KSpeeder accelerates Docker images, package/file downloads,
 META_AUTHOR:=xiaobao
 META_ARCH:=x86_64 aarch64 arm
 META_TAGS:=nas service
-META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/linkease_apps/open?id=kspeeder
+META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/istoreenhance
 META_WEBSITE:=https://kspeeder.com/
 META_TUTORIAL:=https://kspeeder.com/guide/getting-started.html
 META_AUTOCONF:=path enable

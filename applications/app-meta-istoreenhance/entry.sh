@@ -15,7 +15,7 @@ status(){
         local port=$(uci get istoreenhance.@istoreenhance[0].adminport 2>/dev/null)
         local portsec=${port:-5003}
         json_add_string "web" ":${portsec}"
-        json_add_string "href" "/cgi-bin/luci/admin/services/linkease_apps/open?id=kspeeder"
+        json_add_string "href" "/cgi-bin/luci/admin/services/istoreenhance"
         json_add_string "protocol" http
         json_add_string "port" "${portsec}"
         json_add_boolean "deployed" "1"
