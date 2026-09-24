@@ -15,7 +15,7 @@ status(){
 	if pidof baidudrive >/dev/null 2>&1; then
 		json_add_boolean "running" "1"
 		json_add_string "web" ":${port}"
-		json_add_string "href" "/cgi-bin/luci/admin/services/linkease_apps/open?id=baidudrive"
+		json_add_string "href" "/cgi-bin/luci/admin/services/baidudrive"
 		json_add_string "protocol" http
 		json_add_string "port" "${port}"
 		json_add_boolean "deployed" "1"
