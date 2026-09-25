@@ -2,16 +2,19 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=1.0
+PKG_VERSION:=0.3.5
 PKG_RELEASE:=2
-META_TITLE:=AgentFlow(KaiPro)
-META_DEPENDS:=+luci-app-agentflow +luci-i18n-agentflow-zh-cn +agentflow +mise
-META_DESCRIPTION:=统一管理多个Agent，从并行开发、多端联调到 AI 修复的完整闭环。
-META_DESCRIPTION.en:=Unified management of multiple Agents, from parallel development, multi-terminal debugging to AI repair complete closed loop.
-META_AUTHOR:=mikebrady
-META_TAGS:=ai
+META_TITLE:=AgentFlow
+META_DEPENDS:=+agentflow +luci-app-agentflow
+META_DESCRIPTION:=AgentFlow 提供 OpenCode、Codex、Claude 编码代理与工作流编排 Web UI。
+META_DESCRIPTION.en:=AgentFlow provides a Web UI for coding agents and workflow orchestration.
+META_AUTHOR:=geiliai
+META_ARCH:=x86_64 aarch64
+META_TAGS:=development ai service
 META_LUCI_ENTRY:=/cgi-bin/luci/admin/services/agentflow
 META_WEBSITE:=https://agentflow.geili.ai/
+META_AUTOCONF:=path enable
+META_UCI:=agentflow
 
 include ../../meta.mk
 
