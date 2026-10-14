@@ -2,8 +2,8 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_VERSION:=0.1.1
-PKG_RELEASE:=4
+PKG_VERSION:=0.1.2
+PKG_RELEASE:=1
 META_TITLE:=Docker管理
 META_TITLE.en:=Docker Manager
 META_DEPENDS:=+dockermanager +luci-app-dockermanager
