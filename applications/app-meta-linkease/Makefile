@@ -3,10 +3,10 @@
 include $(TOPDIR)/rules.mk
 
 PKG_VERSION:=3.0.0
-PKG_RELEASE:=1
+PKG_RELEASE:=3
 META_TITLE:=易有云
 META_TITLE.en:=LinkEase
-META_DEPENDS:=+linkease +linkease-common-bin +luci-app-linkease +luci-lib-linkeasefile +luci-i18n-linkease-zh-cn
+META_DEPENDS:=+linkease-runtime-transition +linkease +luci-app-linkease +luci-lib-linkeasefile +luci-i18n-linkease-zh-cn
 META_DESCRIPTION:=易有云提供远程访问、文件管理、相册备份、文件同步和备份仓库能力。
 META_DESCRIPTION.en:=LinkEase provides remote access, file management, photo backup, sync, and backup repository.
 META_AUTHOR:=xiaobao
